@@ -1,0 +1,85 @@
+{
+    "id":"brother",
+    "name": "Brother",
+    "description": "",
+    "photography": [
+        {
+            "name":"Untitled (Brother) #2",
+            "date":"2021",
+            "size":"23” x 16 1/2” (59.4 cm x 42 cm)",
+            "color":"Analog B&W photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/nl1slb8eyojxky38fvyi"
+        }  ,
+        {
+            "name":"Untitled (Brother) #3",
+            "date":"2021",
+            "size":"23” x 16 1/2” (59.4 cm x 42 cm)",
+            "color":"Analog B&W photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/nvkqi6qbyrb1aclcok8q"
+        }  ,
+        {
+            "name":"Soldier",
+            "date":"2019",
+            "size":"23 1/2” x 23 1/2” (60 cm x 60 cm)",
+            "color":"Analog B&W photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/x4jw87pdvvycoxtdpdll"
+        }  ,
+        {
+            "name":"Untitled (Brother) #1",
+            "date":"2021",
+            "size":"23 1/2” x 23 1/2” (60 cm x 60 cm)",
+            "color":"Analog B&W photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/kbhzizhk3boetfmzn0ps"
+        }  ,
+        {
+            "name":"Untitled (Brother) #4",
+            "date":"2021",
+            "size":"23” x 16 1/2” (59.4 cm x 42 cm)",
+            "color":"Analog B&W photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/ss6z6lmgmocmfuilw3uc"
+        }  ,
+        {
+            "name":"Milk (Brother)",
+            "date":"2021",
+            "size":"16 1/2” x 16 1/2” (42 cm x 42 cm)",
+            "color":"Analog B&W photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/i2w6en7ayfbojon1mwtd"
+        }  ,
+        {
+            "name":"Scratching (Brother)",
+            "date":"2021",
+            "size":"43” x 43” (110 cm x 110 cm)",
+            "color":"Analog B&W photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/vujzzf6c1e3qbwhzoddn"
+        }  ,
+        {
+            "name":"Untitled (Brother)",
+            "date":"2019",
+            "size":"23” x 16 1/2” (59.4 cm x 42 cm)",
+            "color":"Analog B&W photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/zvxlaitzhdfr9c32sxr5"
+        }  ,
+        {
+            "name":"Quadriptych (Brother)",
+            "date":"2021",
+            "size":"8” x 11 1/2” (21 cm x 29.7 cm)",
+            "color":"Analog B&W photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/tf4xy0jcgs2ik1vfvafn"
+        }  ,
+        {
+            "name":"Untitled (Brother) #5",
+            "date":"2021",
+            "size":"23” x 16 1/2” (59.4 cm x 42 cm)",
+            "color":"Analog B&W photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/ersiapuvqoi1blpquzpi"
+        }  ,
+        {
+            "name":"Diptych (Brother)",
+            "date":"2021",
+            "size":"16 1/2” x 16 1/2” (42 cm x 42 cm)",
+            "color":"Analog B&W photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/khg6jr4bs1coyhyjq117"
+        }  
+       ]
+    
+}

@@ -1,0 +1,150 @@
+{
+    "id":"neophytes",
+    "name": "Neophytes",
+    "description": "<p>\"In this exhibition, Eden presents a project that deals with gender transitions and liminality from a personal, contemporary, and local perspective. Their portraits focus on individuals they documented with a large format camera. In Neophytes, they emphasize the importance of connection in a journey of untying the social bonds of gender and transitions. In addition, the series presents abstract images made in an analog process in the darkroom by placing the liquid of the testosterone hormone on photographic paper that was exposed to light during the development process.\"</p><div class=\"curator-container\"><span>By Rona Yefman, Curator</span></div>",
+    "photography": [
+        {
+            "name":"David",
+            "date":"Tel Aviv, 2023",
+            "size":"25 1/2\" x 20 1/2\" (65 cm x 52 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/up59jycqks8jzrbismbe"
+        }  ,
+        {
+            "name":"Daniel",
+            "date":"Tel Aviv, 2023",
+            "size":"25 1/2\" x 20 1/2\" (65 cm x 52 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/sukovaxybzsyqnc7spsn"
+        } , 
+        {
+            "name":"Koi",
+            "date":"London, 2023",
+            "size":"25 1/2\" x 20 1/2\" (65 cm x 52 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gawhexuiwryhchwratvx"
+        }  ,
+        {
+            "name":"Royo",
+            "date":"Tel Aviv, 2023",
+            "size":"25 1/2\" x 20 1/2\" (65 cm x 52 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/xdxespqeoa3bosgtzjaa"
+        }  ,
+        {
+            "name":"Milan",
+            "date":"Tel Aviv, 2023",
+            "size":"25 1/2\" x 20 1/2\" (65 cm x 52 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/qmnm6n1idmeqia5pmung"
+        }  ,
+        {
+            "name":"Guy",
+            "date":"Tel Aviv, 2023",
+            "size":"25 1/2\" x 20 1/2\" (65 cm x 52 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/hebqcjc3ghlfmriclnrh"
+        }  ,
+        {
+            "name":"Nitzan",
+            "date":"Jerusalem, 2023",
+            "size":"25 1/2\" x 20 1/2\" (65 cm x 52 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/cxh8wb37jl7wr4pfpswm"
+        }  ,
+        {
+            "name":"Eden",
+            "date":"Tel Aviv, 2023",
+            "size":"25 1/2\" x 20 1/2\" (65 cm x 52 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/wuwjcfmb7tp1my8fzuai"
+        }  ,
+        {
+            "name":"Testosterone on Paper #7",
+            "date":"2023",
+            "size":"33 1/2\" x 26 3/4\" (85 cm x 68 cm)",
+            "color":"Chromogenic print scan, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/pt5ssdf94izgtmhlvjfz"
+        }  ,
+        {
+            "name":"Testosterone on Paper #3",
+            "date":"2023",
+            "size":"31 1/2\" x 25\" (80 cm x 64 cm)",
+            "color":"Chromogenic print scan, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/sfwdqwswojbuyovdc015"
+        } ,
+        {
+            "name":"Testosterone on Paper #9",
+            "date":"2023",
+            "size":"11.5\" x 9\" (29.7 cm x 23.6 cm)",
+            "color":"Chromogenic print scan, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/kvb967m88jvlqdflfop8"
+        }  ,
+        {
+            "name":"Testosterone on Paper #25",
+            "date":"2024",
+            "size":"11.5\" x 9\" (29.7 cm x 23.6 cm)",
+            "color":"Chromogenic print scan, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/hhirrrqwelrlizbjletr"
+        }  ,
+        {
+            "name":"Testosterone on Paper #16",
+            "date":"2024",
+            "size":"29 1/2\" x 23 1/2\" (75 cm x 60 cm)",
+            "color":"Chromogenic print scan, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/joszhnhmmqu9jsmaksde"
+        } ,
+        {
+            "name":"Testosterone on Paper #10",
+            "date":"2024",
+            "size":"25 1/2\" x 20 1/2\" (65 cm x 52 cm)",
+            "color":"Chromogenic print scan, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/kaeqt6gukw89iicz47zi"
+        } ,
+        {
+            "name":"Testosterone on Paper #6",
+            "date":"2023",
+            "size":"20 1/2\" x 16 1/2\" (52 cm x 41.8 cm)",
+            "color":"Chromogenic print scan, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/lgh7g9eueulb6dtdbosv"
+        }   ,
+        {
+            "name":"Royo",
+            "date":"2023",
+            "size":"23 1/2\" x 15 1/2\" (60 cm x 40 cm)",
+            "color":" Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/cfmjsyipm8i7domhid7o"
+        }  ,
+        {
+            "name":"Royo #2",
+            "date":"2023",
+            "size":"23 1/2\" x 15 1/2\" (60 cm x 40 cm)",
+            "color":" Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/crg3nx03syws8r66ysr3"
+        }    
+    ],
+    "exhibitions": [{
+        "name": "Neophytes",
+        "date": "9.3 - 30.3.2024",
+        "location":"The Artists House, Tel Aviv,Israel",
+        "curator": "Curated by Rona Yefman",
+        "assistant": "",
+        "photography": [
+"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/mnp69zxrjpswectvr074",
+"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gtr01pe2j51wod6h5jdg",
+"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/tx59lubqnsdugmyl0grm",
+"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gqb5m8xylfwywwpwgj14",
+"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/msgbe7wjn60dtoxi5xl0",
+"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/sukpjwsf8tbqwfkdc1fh",
+"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/sbjc0jktazltpafp8ltz",
+"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gxw7ndwpotuw3zodykdu"
+        ]
+       }],
+       "press": [
+        {
+            "link": "https://www.prtfl.co.il/archives/197449",
+            "text": "\"What's Up? Eden Zornitzer\", Portfolio Magazine, Tel Aviv, IL",
+            "date": "2024"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "id":"ha-oman-17",
+    "name": "Ha'Oman 17",
+    "description": "<p>The photographs in this exhibition are part of a series taken at Ha'Oman 17 Club during periods of inactivity. In the transition from night to day, the club is stripped of human presence, revealing the objects within in a way that extends beyond their typical use during events. The contrast between the vibrant nightlife and the emptiness and silence of daylight highlights the fluidity of this space and its ephemeral nature.</p><p>This environment presents endless possibilities, blurring the lines between reality and imagination, causing absolute definitions to disintegrate. The shimmering disco ball and the hanging speaker, deceptive in their weight and size, serve as universal symbols of nightlife. The light and sound they usually evoke are notably absent from the photographs, leaving behind raw, frozen objects that await rejuvenation, accentuating the eerie emptiness of the space.</p><p>The <i>Ha'Oman 17</i> series explores the inherent qualities of club spaces, emphasizing the power of photography to reframe reality as a multidimensional image and focusing on the very existence of thresholds.</p><div class=\"curator-container\"><span>By Keren Zaltz, Curator</span></div>",
+    "photography": [
+        {
+            "name":"Ha'Oman 17",
+            "date":"2023",
+            "size":"50 1/2\" x 63\" (128 cm x 160 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/ni3imfx8461ihjohzixm"
+        } ,
+        {
+            "name":"Untitled (Ha'Oman 17) #1",
+            "date":"2023",
+            "size":"50 1/2\" x 63\" (128 cm x 160 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/crixk972dpg0tw3wqh39"
+        } ,
+        {
+            "name":"Untitled (Ha'Oman 17) #2",
+            "date":"2023",
+            "size":"63\" x 50 1/2\" (160 cm x 128 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/wmwljqfkutyo2zc5whjv"
+        } ,
+        {
+            "name":"Untitled (Ha'Oman 17) #3",
+            "date":"2023",
+            "size":"63\" x 50 1/2\" (160 cm x 128 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/ja45kpm5pfzanp2g2gxo"
+        } ,
+        {
+            "name":"Untitled (Ha'Oman 17) #4",
+            "date":"2024",
+            "size":"51\" x 41\" (130 cm x 104 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/tmgyenommohapgocq0xe"
+        } 
+       ],
+       "exhibitions": [{
+        "name": "Only the Marvelous is Beautiful",
+        "date": "31.10 - 20.12.2024",
+        "location":"Edmond de Rothschild Center, Tel Aviv, Israel",
+        "curator": "Curator: Keren Zaltz",
+        "assistant": "Assistant Curator: Tali Romem",
+        "photography": [
+"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/aboqznacdxzoxat3tefz"
+,"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/a6iayjzcm7ouknayxjms"
+            ,"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/thpkyiov8r1cl6bynhrx"
+        ]
+       }]
+}

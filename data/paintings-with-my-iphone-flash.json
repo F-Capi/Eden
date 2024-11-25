@@ -1,0 +1,63 @@
+{
+    "id":"paintings-with-my-iphone-flash",
+    "name": "Paintings with My iPhone Flash",
+    "description": "<p></p>",
+    "photography": [
+        {
+            "name":"Paintings with My iPhone Flash #1",
+            "date":"2023",
+            "size":"8\" x 10\" (20.3 cm x 25.4 cm)",
+            "color":"Chromogenic Print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/xokfahzljanw3nhxf6z2"
+        },
+        {
+            "name":"Paintings with My iPhone Flash #2",
+            "date":"2023",
+            "size":"8\" x 10\" (20.3 cm x 25.4 cm)",
+            "color":"Chromogenic Print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/yzp5wqht8zk5o2spwozi"
+        },
+        {
+            "name":"Paintings with My iPhone Flash #3",
+            "date":"2023",
+            "size":"8\" x 10\" (20.3 cm x 25.4 cm)",
+            "color":"Chromogenic Print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/qobexy8azczeatu1he5t"
+        },
+        {
+            "name":"Paintings with My iPhone Flash #4",
+            "date":"2023",
+            "size":"8\" x 10\" (20.3 cm x 25.4 cm)",
+            "color":"Chromogenic Print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/zl8f6junzvphqyy72d8k"
+        },
+        {
+            "name":"Paintings with My iPhone Flash #5",
+            "date":"2023",
+            "size":"8\" x 10\" (20.3 cm x 25.4 cm)",
+            "color":"Chromogenic Print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/kxgphxohibgudzllbad4"
+        },
+        {
+            "name":"Paintings with My iPhone Flash #6",
+            "date":"2023",
+            "size":"8\" x 10\" (20.3 cm x 25.4 cm)",
+            "color":"Chromogenic Print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/jnrt29jkqmexsx6sdjl0"
+        },
+        {
+            "name":"Paintings with My iPhone Flash #7",
+            "date":"2023",
+            "size":"8\" x 10\" (20.3 cm x 25.4 cm)",
+            "color":"Chromogenic Print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/vzsoktmcrnm6aetcafgb"
+        },
+        {
+            "name":"Paintings with My iPhone Flash #8",
+            "date":"2023",
+            "size":"8\" x 10\" (20.3 cm x 25.4 cm)",
+            "color":"Chromogenic Print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/duljrj7uniq25rnfqi8f"
+        }
+    ]
+}

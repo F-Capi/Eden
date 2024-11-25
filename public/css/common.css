@@ -1,0 +1,541 @@
+
+@font-face {
+    font-family: 'ABCMonumentGrotesk';
+    src: url('/fonts/ABCMonumentGrotesk-Regular-Trial.woff2?v=1') format('woff2'),
+    url('/fonts/ABCMonumentGrotesk-Regular-Trial.woff?v=1') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ABCMonumentGrotesk-Medium';
+    src: url('/fonts/ABCMonumentGrotesk-Medium-Trial.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+*{
+    font-family: 'ABCMonumentGrotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+}
+
+#content {
+    min-height: 864px;
+    position: relative;
+}
+
+.nav{
+    margin: 0;
+    border-top: 1px solid #BCBCBC;
+    border-bottom: 1px solid #BCBCBC;
+    margin-top: 36.75px;
+    padding:  8px 0;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+letter-spacing: -0.02em;
+
+
+}
+.nav a{
+  
+    margin-right: 17px;
+}
+.nav .home{
+    margin-left: 26.95px;
+    margin-right: 95px;
+}
+.nav a:hover{
+    border-bottom: 1px solid black;
+}
+
+footer{
+    border-top: 1px solid #BCBCBC;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+    padding-top: 16px;
+}
+
+footer{
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+}
+footer .footer-section:nth-of-type(1){
+    margin-left: 16px;
+}
+footer .footer-section:nth-of-type(4){
+    margin-right: 25px;
+}
+
+
+/*WORK*/
+
+#cover_container{
+    position: absolute;
+    width: 529.83px;
+    height: 695.03px;
+    top: 0px;
+    right: 100.79px;
+    }
+
+#cover_container img{
+    width: 100%;
+}
+#projects{
+margin-left: 5px;
+margin-right: 7.5px;
+margin-top: 59px;
+}
+#projects .project:last-of-type{
+    border-bottom: 1px solid #BCBCBC;
+
+}
+.project{
+    border-top: 1px solid #BCBCBC;
+    
+    padding-top: 6px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+.project div{
+    display: flex;
+    gap: 23px;
+}
+.project > div{
+    margin-left: 15px;
+}
+
+.project div a{
+    font-family: 'ABCMonumentGrotesk-Medium', sans-serif;
+font-size: 24px;
+text-align: left;
+}
+.project div span{
+font-size: 12px;
+font-weight: 500;
+line-height: 0.96px;
+display: flex;
+align-items: center;
+}
+.project-hover {
+    width: 377.645px;
+    margin-right: 72.53px;
+    display: inline-block; 
+    position: relative; 
+    padding-left: 7px;
+    padding-right: 3px;
+    font-size: 2rem; 
+}
+
+.project-hover::after{
+    content: ''; 
+    position: absolute;
+    top: 50%; 
+    left: 0;
+    right: 0;
+    height: 80%;
+    background: #F4FF61;
+    z-index: -1; 
+    transform: translateY(-50%) scaleX(0); 
+   /* transition: transform 0.3s ease;  */
+}
+
+
+.project-hover:hover::after {
+    transform: translateY(-50%) scaleX(1); 
+}
+
+
+/*Project top part*/
+#project-content-top{
+    margin-top: 45.3px;
+    padding-right: 1em;
+
+}
+#project-content > *{
+    margin-left: 34.45px;
+
+}
+#project-content-top p{
+    margin-bottom: 1em;
+}
+#project-title{
+    color: #0C0C0C;
+
+font-size: 24px;
+font-style: normal;
+font-weight: bold;
+margin-bottom: 24.76px;
+
+}
+#project-description p{
+    color: #0C0C0C;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+max-width: 1340.936px;
+}
+
+#project-description p > *{
+    color: #0C0C0C;
+font-size: 20px;
+font-weight: 400;
+}
+
+
+.curator-container span{
+    font-family: 'ABCMonumentGrotesk-Medium';
+    color: #0C0C0C;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+}
+
+
+#dropdowns{
+    margin-left: 7.5px;
+    margin-top: 57px;
+}
+#dropdowns .dropdown-container:last-of-type .dropdownTitleContaniner{
+    border-bottom: 1px solid #BCBCBC;
+
+}
+#dropdowns .dropdown-container:last-of-type {
+    margin-bottom: 123px;
+
+}
+.dropdownTitleContaniner{
+    border-top: 1px solid #BCBCBC;
+    border-bottom: 1px solid #BCBCBC;
+    margin-bottom: -1.2px;
+
+padding: 5px 0;
+padding-left: 12px;
+display: flex;
+align-items: center;
+}
+
+/* Título del dropdown */
+.dropdown-title {
+    margin-right: 10px;
+    color: #0C0C0C;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-weight: bold; 
+       position: relative;      
+    display: block;
+    padding-left: 10px;
+
+}
+.arrow{
+    line-height: 60%;
+    position: relative;
+    top:1px;
+}
+.dropdown-title::after{
+    width: 100%;
+    padding-right: 35px;
+    content: ''; 
+    position: absolute;
+    top: 15%;
+    left: 0;
+    right: 0;
+    height: 70%;
+    background: #F4FF61;
+    z-index: -1; 
+    transform: translateY(-30%) scaleX(0); 
+   /* transition: transform 0.3s ease;  */
+}
+
+
+.dropdown-title:hover::after {
+    transform: translateY(-0%) scaleX(1); 
+}
+
+
+
+/* Contenido oculto del dropdown */
+.dropdown-content {
+    display: none;
+
+    padding: 0 10px;
+    padding-top: 56px;
+    padding-bottom: 41px;
+    position: relative; /* Para posicionar .dropdown-nav dentro */
+}
+
+/* Clase para hacer visible el contenido del dropdown */
+.dropdown-content-visible {
+    display: block;
+}
+
+.exhibition-info{
+    position: absolute;
+    top: 20.74px;
+    left: 24.84px;
+}
+/* Imágenes dentro del contenido del dropdown */
+/* Imagen dentro del dropdown */
+.dropdown-image {
+    max-height: 215.153px;
+    object-fit: cover;
+    margin-left: 11.62px;
+    margin-bottom: 11.62px;
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+
+}
+.exhibition-image {
+    object-fit: cover;
+    margin-left: 11.62px;
+    margin-bottom: 11.62px;
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+    max-height: 109.17px;
+
+
+}
+/* Navegación dentro del contenido del dropdown */
+.dropdown-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Ocultar por defecto */
+    z-index: 1; /* Debajo de los botones */
+    pointer-events: none; /* Evitar que interfiera con los clics */
+}
+
+/* Áreas clicables */
+.dropdown-nav .nav-left,
+.dropdown-nav .nav-right {
+    position: absolute;
+    top: 0;
+    height: 100%; /* Altura completa del contenido */
+    width: 15%; /* Solo ocupa un pequeño margen a los lados de la imagen */
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0); /* Invisibles */
+    z-index: 3; /* Delante de la imagen */
+    pointer-events: auto; /* Permitir interacción solo en las áreas clicables */
+}
+
+.dropdown-nav .nav-left {
+    left: 0; /* En el margen izquierdo del dropdown-content */
+}
+
+.dropdown-nav .nav-right {
+    right: 0; /* En el margen derecho del dropdown-content */
+}
+
+.press{
+    padding-left: 24px;
+    padding-top: 20.51px;
+}
+
+.press-item {
+    margin-bottom: 10px;
+}
+
+.press-item a {
+}
+
+.press-item a:hover {
+    text-decoration: underline;
+}
+
+.press-date {
+    margin-top: 8px;
+}
+
+/* Galería */.hidden {
+    display: none;
+}
+#gallery {
+    display: none;
+    width: 100%;
+    height: 100%; /* Cubrir solo #content */
+    color: black; /* Texto negro */
+    z-index: 1000; /* Asegura que la galería esté sobre otros elementos de #content */
+    margin-top: 81px;
+    padding-left: 34.04px;
+    padding-top: 29.89px;
+
+}
+
+#gallery-image {
+    max-height: 832.578px;
+    width: 631.339px;
+    margin-bottom: 20px;
+}
+
+#gallery-info{
+    margin-right: 7.5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#gallery-info-top{
+display: flex;
+border-top: 1px solid #BCBCBC;
+border-bottom: 1px solid #BCBCBC;
+width: 100%;
+padding: 10.5px 75.69px;
+}
+#gallery-name{
+    width: 360px;
+    color: #0C0C0C;
+font-size: 12px;
+font-style: normal;
+font-weight: bold;
+text-transform: uppercase;
+}
+#gallery-date{
+    color: #0C0C0C;
+font-size: 10px;
+font-style: normal;
+}
+#gallery-info-bottom{
+    padding: 10.5px 75.69px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #BCBCBC;
+    gap: 6.25px;
+
+}
+#gallery-info1, #gallery-info2{
+    font-size: 10px;
+
+
+}
+
+@media (max-width: 1150px) {
+#gallery-name{
+    width: fit-content;
+    margin-right: 52.68px;
+
+}
+}
+@media (max-width: 800px) {
+    #gallery-image {
+        width: calc(100% -  26px);
+        margin-bottom: 20px;
+        margin: auto;
+        max-width: 631.339px;
+
+    }
+    #gallery-name{
+        width: fit-content;
+        max-width: 50%;
+        margin-right: 52.68px;
+    }
+    #gallery{
+        flex-direction: column-reverse;
+        padding-left: 0;
+        margin-top: 0;
+        padding-top: 43.41px;
+    }
+    #gallery-info-bottom{
+        margin-bottom: 32px;
+        padding: 11.5px 23px;
+    }
+    #gallery-info-top{
+        padding: 11.5px 23px;
+    }
+}
+@media (max-width: 400px) {
+    #content {
+        min-height: 593px;
+    }
+    .nav, footer{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .nav a:nth-child(3){
+        display: none;
+    }
+    footer{
+        flex-direction: column-reverse;
+        justify-content: start;
+        
+        padding-top: 9px;
+        height: 140px;
+    }
+    footer .footer-section:nth-of-type(1){
+        padding-left: 19px;
+        display: none;
+    }
+    footer .footer-section:nth-of-type(4){
+        padding-left: 19px;
+        margin-bottom: 10px;
+            }
+    footer .footer-section:nth-of-type(3){
+        padding-left: 19px;
+        margin-bottom: 10px;
+    }
+    footer .footer-section:nth-of-type(2){
+        border-top: 1px solid #BCBCBC;
+        padding-left: 19px;
+        padding-top: 10px;
+    }
+  
+    #projects{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #cover_container{
+        display: none;
+    }
+    .project div a{
+    font-size: 16px;
+    }
+    .project-hover {
+        width: fit-content;
+        margin-right: 18px;
+    }
+    .dropdown-content {
+        text-align: center; /* Centrar contenido */
+    }
+
+    .dropdown-nav {
+        display: flex; /* Mostrar navegación en diseño responsivo */
+    }
+
+    .dropdown-image {
+        max-height: 358.968px;
+        width: 80%;
+        max-width: 273.108px;
+    margin: 0;
+    margin: auto;
+    }
+    .exhibition-image {
+        max-height: 100%;
+        max-width: 95%;
+    margin: 0;
+    margin: auto;
+    }
+    #project-content-top{
+        margin-left: 17.5px;
+    }
+    #dropdowns{
+        margin-left: 0;
+    }
+   
+}
+
+
