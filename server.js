@@ -4,15 +4,6 @@ const fs = require('fs');
 const app = express();
 const port = 3000;
 
-app.use(
-    session({
-        cookie: {
-            sameSite: 'none',
-            secure: true,
-        },
-    })
-);
-
 
 app.use(express.json());
 
