@@ -1,0 +1,190 @@
+
+@font-face {
+    font-family: 'ABCMonumentGrotesk';
+    src: url('/fonts/ABCMonumentGrotesk-Regular-Trial.woff2?v=1') format('woff2'),
+    url('/fonts/ABCMonumentGrotesk-Regular-Trial.woff?v=1') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ABCMonumentGrotesk-Medium';
+    src: url('/fonts/ABCMonumentGrotesk-Medium-Trial.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+*{
+    font-family: 'ABCMonumentGrotesk', sans-serif;
+    font-size: calc(12 / 1024 * 100vh);
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    overflow: hidden; 
+      }
+  
+  
+  .main-container {
+    z-index: 0;
+    position: relative;
+    background-color: #F7F7F7;
+    height: 100vh; 
+    width: 100vw; 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+    padding-right: 7.5px;
+    padding-left: 7.5px;
+}
+header{
+    width: 100%;
+}
+.nav{
+    margin: 0;
+    border-top: 1px solid #BCBCBC;
+    border-bottom: 1px solid #BCBCBC;
+    margin-top: calc(36.41 / 1024 * 100vh);
+    padding: calc(8 / 1024 * 100vh) 0;
+
+letter-spacing: -0.02em;
+}
+.nav a{
+  
+    margin-right: 17px;
+}
+.nav .home{
+    margin-left:26.95px; 
+    margin-right:95px;
+}
+
+
+footer {
+    border-top: 1px solid #BCBCBC; /* Mantiene el borde superior */
+    padding-top: calc(16 / 1024 * 100vh); /* Padding superior adaptado a la altura del diseño base */
+}
+
+
+footer {
+    position: relative; /* Cambiado de absolute a relative */
+    border-top: 1px solid #BCBCBC;
+    padding-top: calc(16 / 1024 * 100vh);
+    display: flex;
+    justify-content: space-between;
+    height: calc(100 / 1024 * 100vh);
+    width: 100%;
+    margin-top: auto; /* Empuja el footer al final de .main-container */
+}
+
+
+footer .footer-section:nth-of-type(1) {
+    margin-left:16px; 
+}
+
+footer .footer-section:nth-of-type(4) {
+    margin-right:25px;
+}
+
+
+#cover_container {
+    position: absolute;
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajustar el centrado */
+    height: calc(800/ 1024 * 100vh); /* Altura relativa basada en 1024px */
+    width: auto; /* El ancho se ajusta automáticamente en proporción */
+    display: flex; /* Flexbox para alinear contenido interno (la imagen) */
+    justify-content: center;
+    align-items: center;
+    z-index: -10;
+}
+
+#cover_container img {
+    height: 100%; /* La imagen ocupa toda la altura del contenedor */
+    width: auto; /* El ancho se ajusta proporcionalmente */
+}
+
+
+#projects {
+    margin-top: calc(59 / 1024 * 100vh); /* Margen superior adaptado */
+}
+
+#projects .project:last-of-type {
+    border-bottom: 1px solid #BCBCBC; /* Se mantiene constante */
+}
+
+.project {
+    border-top: 1px solid #BCBCBC; /* Se mantiene constante */
+    padding-top: calc(6 / 1024 * 100vh); /* Padding superior adaptado */
+    padding-bottom: calc(5 / 1024 * 100vh); /* Padding inferior adaptado */
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.project div {
+    display: flex;
+    gap: calc(23 / 1440 * 100vw); /* Espaciado entre elementos adaptado */
+}
+
+.project > div {
+    margin-left: calc(15 / 1440 * 100vw); /* Margen izquierdo adaptado */
+}
+
+.project div a {
+    font-family: 'ABCMonumentGrotesk-Medium', sans-serif;
+    font-size: calc(24 / 1024 * 100vh); /* Tamaño de fuente relativo */
+    text-align: left;
+}
+
+.project div span {
+    font-size: calc(12 / 1024 * 100vh); /* Tamaño de fuente relativo */
+    font-weight: 500;
+    line-height: calc(0.96 / 1024 * 100vh); /* Altura de línea relativa */
+    display: flex;
+    align-items: center;
+}
+
+.project-hover {
+    display: inline-block;
+    position: relative;
+    padding-left: 7px; /* Padding izquierdo adaptado */
+    padding-right: 3px; /* Padding derecho adaptado */
+    font-size: calc(32 / 1024 * 100vh); /* Fuente relativa en rem o vh */
+}
+.work-project-year{
+    position: absolute;
+    left: calc(430/1024 * 100vh);
+}
+
+
+/* Clase general para el hover effect */
+.hover-effect {
+    position: relative; 
+    display: inline-block; 
+    cursor: pointer;
+    overflow: visible; 
+}
+
+.hover-effect::after {
+    content: '';
+    position: absolute;
+    bottom: calc(3/1024*100vh); 
+    left: 0;
+    right: 0;
+    height: 70%; 
+    background: #F4FF61; 
+    transform: scaleX(0); 
+    transform-origin: center bottom; 
+    z-index: -1; 
+}
+
+.hover-effect:hover::after {
+    transform: scaleX(1); 
+}

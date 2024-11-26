@@ -22,12 +22,12 @@ async function loadProjects() {
             hoverElement.classList.add('project-hover');
 
             const span = document.createElement('span');
-            span.innerHTML = `<span>${project.year}</span>`;
-
+            span.innerHTML = project.year;
+            span.classList.add("work-project-year");
             projectElement.appendChild(hoverElement);
             projectElement.appendChild(span);
             hoverElement.innerHTML = `
-          <a href="/project/${project.id}">${project.name}</a>
+          <a class="hover-effect" href="/project/${project.id}">${project.name}</a>
          `;
 
             hoverElement.addEventListener("mouseover", () => {

@@ -26,7 +26,7 @@
 }
 
 #content {
-    min-height: 864px;
+    min-height: 806px;
     position: relative;
 }
 
@@ -34,13 +34,11 @@
     margin: 0;
     border-top: 1px solid #BCBCBC;
     border-bottom: 1px solid #BCBCBC;
-    margin-top: 36.75px;
+    margin-top: 36.41px;
     padding:  8px 0;
     margin-left: 7.5px;
     margin-right: 7.5px;
 letter-spacing: -0.02em;
-
-
 }
 .nav a{
   
