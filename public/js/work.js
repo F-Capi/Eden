@@ -1,7 +1,17 @@
 
 async function loadProjects() {
     const contentDiv = document.querySelector('#projects');
+    const scrollToTopButton = document.getElementById('backToTop');
 
+
+    // Agrega un evento al botón para que el contenedor vuelva al inicio
+    scrollToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0, // Posición inicial (arriba del todo)
+            behavior: 'smooth' // Desplazamiento suave
+        });
+    });
 
     try {
         const response = await fetch('/api/work');
@@ -18,23 +28,59 @@ async function loadProjects() {
             const projectElement = document.createElement('div');
             projectElement.classList.add('project');
 
-            const hoverElement = document.createElement('div');
-            hoverElement.classList.add('project-hover');
+            const projectInfo = document.createElement('div');
+            projectInfo.classList.add('work-project-info');
+
+
+
+
+            projectElement.appendChild(projectInfo);
+
+
 
             const span = document.createElement('span');
             span.innerHTML = project.year;
             span.classList.add("work-project-year");
-            projectElement.appendChild(hoverElement);
-            projectElement.appendChild(span);
-            hoverElement.innerHTML = `
-          <a class="hover-effect" href="/project/${project.id}">${project.name}</a>
-         `;
 
-            hoverElement.addEventListener("mouseover", () => {
-                let cover = document.querySelector("#cover_container");
-                cover.innerHTML = "";
-                cover.innerHTML = `<img src="${project.cover}" alt="${project.name}"  />`
+            projectInfo.innerHTML = `
+            <a class="work-project-title" href="/project/${project.id}">${project.name}</a><p class="work-project-plus">+</p>
+           `;
+            projectInfo.appendChild(span);
+
+            const hiddenDetails = document.createElement("span");
+            hiddenDetails.classList.add("hiddenDetails");
+            hiddenDetails.innerHTML = project.details;
+
+            projectInfo.appendChild(hiddenDetails);
+
+            const images = document.createElement("div");
+            images.classList.add("work-project-images");
+
+
+            project.imgs.forEach(img => {
+                const di = document.createElement("div");
+                di.classList.add("work-project-image-container");
+                const i = document.createElement("img");
+                di.appendChild(i);
+                i.src = img.url;
+                if (img.crop) {
+                    di.classList.add("work-image-crop");
+                }
+                if (img.top) {
+                    i.style.top = img.top;
+
+                }
+                if (img.left) {
+                    i.style.left = img.left;
+
+                }
+                if (img.width) {
+                    i.style.width = img.width;
+
+                }
+                images.appendChild(di);
             });
+            projectElement.appendChild(images);
             contentDiv.appendChild(projectElement);
         });
     } catch (error) {

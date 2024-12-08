@@ -1,44 +1,81 @@
 [
         {
             "id":"neophytes-kiryat-hamelacha",
-            "name": "Neophytes: Kiryat Hamelacha",
+            "name": "<span>Neophytes:</span><br><span> Kiryat Hamelacha</span>",
             "year": 2024,
-            "cover":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/hjyuniqzbt7hiwdyiqkz"
+            "imgs": [
+                {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/ysn5mcinfanocmio3c4e"}, 
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/uacoxy6up14xvvvbr3h3", "crop":"true", "width":"144%","top":"-30%", "left":"-20%"},
+               { "url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/ytg0q7z5lg3oeo9rmbl4"},
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/nvpzlbd61qetfkogtv9e"}
+            ],
+            "details": "Analog color photography<br>Archival pigment print"
         },
         {
             "id":"ha-oman-17",
-            "name": "Ha'Oman 17",
+            "name": "<span>Ha'Oman 17</span>",
             "year": 2024,
-            "cover":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/uummgl4dq0fv9kfcqynu"
+            "imgs": [
+                {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/crixk972dpg0tw3wqh39"}, 
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/tmgyenommohapgocq0xe"},
+               { "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/wmwljqfkutyo2zc5whjv","crop":"true","width":"100%","top":"-10%", "left":"0%"}    
+                    ],
+            "details": "Analog color photography<br>Archival pigment print"
+                    
         },
         {
             "id":"testosterone-on-paper-aura",
-            "name": "Testosterone on Paper: Aura",
+            "name": "<span>Testosterone on Paper:</span><br> <span>Aura</span>",
             "year": 2024,
-            "cover":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/rk7jmrf84bglzsaccpog"
+            "imgs": [
+                {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/blaazpecuoxz6il2kolm" , "crop":"true","width":"100%","top":"-30%", "left":"0"}, 
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/vnvg8dzrbf6lzwwbdugx"}       
+              ],
+            "details":"Photographic negative,<br> Testosterone, Chromogenic print"
         },
         {
             "id":"neophytes",
-            "name": "Neophytes",
+            "name": "<span>Neophytes</span>",
             "year": 2023,
-            "cover":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/zhxfbyhioa5ovx9xxceq"
+            "imgs": [
+                {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gawhexuiwryhchwratvx" }, 
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/cfmjsyipm8i7domhid7o", "crop":"true","width":"100%","top":"-50%", "left":"0%"} ,
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/sfwdqwswojbuyovdc015" }, 
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/hhirrrqwelrlizbjletr" },
+               {"url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/up59jycqks8jzrbismbe" }      
+
+              ] ,
+              "details":"Testosterone, Chromogenic print<br> scan Archival pigment print,<br> Analog color photography"
         },
         {
             "id":"paintings-with-my-iphone-flash",
-            "name": "Paintings with My iPhone Flash",
+            "name": "<span>Paintings with My iPhone</span><br> <span>Flash</span>",
             "year": 2023,
-            "cover":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/n4k1ysukivgjwxnfpqry"
+            "imgs": [ {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/jnrt29jkqmexsx6sdjl0"}],
+            "details":"Photographic negative,<br> Testosterone, Chromogenic print"
         },
         {
             "id":"you-could-be-me-i-could-be-you",
-            "name": "You Could be Me, I Could Be U",
+            "name": "<span>You Could be Me, I</span><br> <span>Could Be U</span>",
             "year": 2022,
-            "cover":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/uxf7lveygraox9xszyll"
+            "imgs": [
+                {"url":  "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/koan0cio1gzdasac1slh"}, 
+               {"url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/cfymcmbilrmijqoyz5cr"} ,
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/nq5snbp8ukzcumxjk3b7", "crop":"true","width":"100%","top":"0%", "left":"0"}, 
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/zhb3vunjekv28syl3z2p" }     
+
+              ] ,
+              "details":"Analog color photography,<br> Archival pigment print"
         },
         {
             "id":"brother",
-            "name": "Brother",
+            "name": "<span>Brother</span>",
             "year": 2021,
-            "cover":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/wp7kov0fvdamxzrvi2dk"
+            "imgs": [
+                {"url":  "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/kbhzizhk3boetfmzn0ps"}, 
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/x4jw87pdvvycoxtdpdll","crop":"true","width":"120%","top":"-30%", "left":"-10%"} ,
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/nl1slb8eyojxky38fvyi"}
+              ] ,
+              "details":"Analog B&W photography,<br>Archival pigment print"
         }
-    ]
+       ]

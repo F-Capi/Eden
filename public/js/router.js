@@ -8,20 +8,41 @@ const loadPage = async (page, projectTitle = '') => {
     contentDiv.classList.add('fade-out');
     await new Promise(resolve => setTimeout(resolve, 120));
 
+    const navigationLinks = document.querySelectorAll(".nav a");
+    navigationLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            resetLinksBackgrounds();
+            if (!link.classList.contains("home")) {
+                link.classList.add("active-link");
+            }
+        });
+    });
+
+    function resetLinksBackgrounds() {
+        navigationLinks.forEach(link => {
+            link.classList.remove("active-link");
+        });
+    }
+
     switch (page) {
         case 'home':
+
             contentDiv.innerHTML = await fetch('/partials/home.html').then(res => res.text());
             await loadScript('./js/home.js');
             break;
         case 'about':
+
             contentDiv.innerHTML = await fetch('/partials/about.html').then(res => res.text());
             await loadScript('./js/about.js');
             break;
         case 'work':
+
             contentDiv.innerHTML = await fetch('/partials/work.html').then(res => res.text());
             await loadScript('./js/work.js');
             break;
         case 'project':
+            resetLinksBackgrounds();
+            document.getElementById("index").classList.add("active-link");
             contentDiv.innerHTML = await fetch('/partials/projectPage.html').then(res => res.text());
             await loadScript('/js/project-page.js');
             break;

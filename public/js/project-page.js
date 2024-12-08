@@ -57,10 +57,22 @@ async function loadProjectDetails() {
                     });
                 });
 
+                let photos = [];
+                exhibition.photography.forEach(photo => {
+                    photos.push({
+                        url: photo,
+                        name: exhibition.name,
+                        exhibitionDate: exhibition.date,
+                        exhibitionLocation: exhibition.location,
+                        curator: exhibition.curator,
+                        assistant: exhibition.assistant
+                    });
+                });
+
                 createDropdown(
                     dropdownContainer,
                     `Exhibition`,
-                    exhibition.photography,
+                    photos,
                     startIndex
                 );
             });
@@ -85,14 +97,9 @@ function createPressDropdown(container, title, pressItems) {
     dropdownTitle.classList.add('dropdown-title');
     dropdownTitle.textContent = title;
 
-    const dropdownArrow = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    dropdownArrow.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    dropdownArrow.setAttribute("width", "16");
-    dropdownArrow.setAttribute("height", "17");
-    dropdownArrow.setAttribute("viewBox", "0 0 16 17");
-    dropdownArrow.innerHTML = `
-          <path d="M7.33782 15.7437C7.72834 16.1343 8.36151 16.1343 8.75203 15.7437L15.116 9.37977C15.5065 8.98924 15.5065 8.35608 15.116 7.96555C14.7255 7.57503 14.0923 7.57503 13.7018 7.96555L8.04492 13.6224L2.38807 7.96555C1.99754 7.57503 1.36438 7.57503 0.973854 7.96555C0.58333 8.35608 0.58333 8.98924 0.973854 9.37977L7.33782 15.7437ZM7.04492 0.0102539L7.04492 15.0366L9.04492 15.0366L9.04492 0.0102539L7.04492 0.0102539Z" fill="black"/>
-      `;
+    const dropdownArrow = document.createElement("span");
+
+    dropdownArrow.innerHTML = `+`;
     dropdownArrow.style.display = "none"; // Ocultar por defecto
     dropdownArrow.classList.add("arrow");
 
@@ -119,21 +126,32 @@ function createPressDropdown(container, title, pressItems) {
     });
 
     dropdownTitle.addEventListener('click', () => {
+        const isOpen = dropdownContent.classList.toggle('dropdown-content-visible');
 
-        dropdownContent.classList.toggle('dropdown-content-visible');
-        if (dropdownContent.classList.contains('dropdown-content-visible')) {
-            dropdownArrow.style.display = "block";
+        // Actualizar el texto del título con el símbolo dinámico
+        dropdownTitle.textContent = `${isOpen ? '+' : '+'} ${title}`;
+    });
 
-        } else {
-            dropdownArrow.style.display = "none";
+    // Agregar hover para mostrar el símbolo `+` al pasar el cursor
+    dropdownTitle.addEventListener('mouseover', () => {
+        if (!dropdownContent.classList.contains('dropdown-content-visible')) {
+            dropdownTitle.textContent = `+ ${title}`; // Mostrar el símbolo en hover
         }
     });
+
+    dropdownTitle.addEventListener('mouseout', () => {
+        if (!dropdownContent.classList.contains('dropdown-content-visible')) {
+            dropdownTitle.textContent = `${title}`; // Restaurar solo el título
+        }
+    });
+
+    dropdownTitle.classList.add("hover-effect");
 
 
     const dropdownTitleContaniner = document.createElement('div');
     dropdownTitleContaniner.classList.add('dropdownTitleContaniner');
     dropdownTitleContaniner.appendChild(dropdownTitle);
-    dropdownTitleContaniner.appendChild(dropdownArrow);
+    dropdownTitle.appendChild(dropdownArrow);
     dropdown.appendChild(dropdownTitleContaniner);
     dropdown.appendChild(dropdownContent);
     container.appendChild(dropdown);
@@ -144,31 +162,29 @@ function createPressDropdown(container, title, pressItems) {
 // Función para inicializar el dropdown
 function createDropdown(container, title, images, startIndex) {
 
+
     const dropdown = document.createElement('div');
     dropdown.classList.add('dropdown-container');
 
     const dropdownTitle = document.createElement('div');
     dropdownTitle.classList.add('dropdown-title');
-    dropdownTitle.textContent = title;
+    dropdownTitle.innerHTML = title;
 
     const dropdownContent = document.createElement('div');
     dropdownContent.classList.add('dropdown-content');
 
 
+    const dropdownArrow = document.createElement("span");
 
-    // Crear el SVG y ocultarlo inicialmente
-    const dropdownArrow = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    dropdownArrow.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    dropdownArrow.setAttribute("width", "16");
-    dropdownArrow.setAttribute("height", "17");
-    dropdownArrow.setAttribute("viewBox", "0 0 16 17");
-    dropdownArrow.innerHTML = `
-          <path d="M7.33782 15.7437C7.72834 16.1343 8.36151 16.1343 8.75203 15.7437L15.116 9.37977C15.5065 8.98924 15.5065 8.35608 15.116 7.96555C14.7255 7.57503 14.0923 7.57503 13.7018 7.96555L8.04492 13.6224L2.38807 7.96555C1.99754 7.57503 1.36438 7.57503 0.973854 7.96555C0.58333 8.35608 0.58333 8.98924 0.973854 9.37977L7.33782 15.7437ZM7.04492 0.0102539L7.04492 15.0366L9.04492 15.0366L9.04492 0.0102539L7.04492 0.0102539Z" fill="black"/>
-      `;
+    dropdownArrow.innerHTML = `+`;
     dropdownArrow.style.display = "none"; // Ocultar por defecto
     dropdownArrow.classList.add("arrow");
+
+
     let currentIndex = 0; // Índice actual de la imagen mostrada
 
+    const infoImagesContainer = document.createElement('div');
+    infoImagesContainer.classList.add('infoImagesContainer');
     // Crear la navegación
     const navigationContainer = document.createElement('div');
     navigationContainer.classList.add('dropdown-nav');
@@ -186,23 +202,49 @@ function createDropdown(container, title, images, startIndex) {
         img.alt = images[currentIndex].name || title;
 
         if (title === "Exhibition") {
+            console.log(images);
+            infoImagesContainer.innerHTML = `<div id="gallery-top-info"><p id="gallery-name">${images[currentIndex].name}<br> ${images[currentIndex].exhibitionDate}<br> ${images[currentIndex].exhibitionLocation}</p></div>
+            <div id="gallery-bottom-info"><p id="gallery-info1">${images[currentIndex].curator}</p><p id="gallery-info2">${images[currentIndex].assistant}</p></div>
+              `;
+
             img.classList.add('exhibition-image');
+            const num = document.createElement("p");
+            num.classList.add("gallery-number");
+            num.innerHTML = `${currentIndex + 1}/${images.length}`;
+
+
+            dropdownContent.appendChild(infoImagesContainer);
+            dropdownContent.appendChild(img);
+            dropdownContent.appendChild(navigationContainer);
+            dropdownContent.appendChild(num);
+
+
 
         } else {
 
+            infoImagesContainer.innerHTML = `<div id="gallery-top-info"><p id="gallery-name">${images[currentIndex].name} ${images[currentIndex].date}</p></div>
+          <div id="gallery-bottom-info"><p id="gallery-info1">${images[currentIndex].size}</p><p id="gallery-info2">${images[currentIndex].color}</p></div>
+            `;
             img.classList.add('dropdown-image');
 
-        }
-        // Hacer clic en la imagen abre la galería
-        img.addEventListener('click', () => openGallery(startIndex + currentIndex));
+            const num = document.createElement("p");
+            num.classList.add("gallery-number");
+            num.innerHTML = `${currentIndex + 1}/${images.length}`;
 
-        dropdownContent.appendChild(img);
-        dropdownContent.appendChild(navigationContainer); // Añadir navegación a dropdown-content
+
+            dropdownContent.appendChild(infoImagesContainer);
+            dropdownContent.appendChild(img);
+            dropdownContent.appendChild(navigationContainer);
+            dropdownContent.appendChild(num);
+
+
+
+        }
     }
 
     // Navegar hacia atrás
-    // Navegar hacia atrás
     leftArea.addEventListener('click', (event) => {
+        event.preventDefault();
         event.stopPropagation(); // Detener propagación para evitar clic en la imagen
         if (currentIndex > 0) {
             currentIndex--;
@@ -212,6 +254,7 @@ function createDropdown(container, title, images, startIndex) {
 
     // Navegar hacia adelante
     rightArea.addEventListener('click', (event) => {
+        event.preventDefault();
         event.stopPropagation(); // Detener propagación para evitar clic en la imagen
         if (currentIndex < images.length - 1) {
             currentIndex++;
@@ -226,6 +269,7 @@ function createDropdown(container, title, images, startIndex) {
 
         if (isResponsive) {
             navigationContainer.style.display = 'flex'; // Mostrar navegación en responsivo
+            infoImagesContainer.style.display = "flex";
             updateImage();
         } else {
             dropdownContent.innerHTML = ''; // Limpiar contenido
@@ -262,7 +306,8 @@ function createDropdown(container, title, images, startIndex) {
 
                 dropdownContent.appendChild(img);
             });
-            navigationContainer.style.display = 'none'; // Ocultar navegación
+            navigationContainer.style.display = 'none';
+            infoImagesContainer.style.display = "none";
         }
 
 
@@ -272,19 +317,29 @@ function createDropdown(container, title, images, startIndex) {
     navigationContainer.appendChild(leftArea);
     navigationContainer.appendChild(rightArea);
 
+
     dropdownTitle.addEventListener('click', () => {
-        dropdownContent.classList.toggle('dropdown-content-visible');
-        navigationContainer.style.display = dropdownContent.classList.contains('dropdown-content-visible') && window.innerWidth <= 400 ? 'flex' : 'none';
+        const isOpen = dropdownContent.classList.toggle('dropdown-content-visible');
+        navigationContainer.style.display = isOpen && window.innerWidth <= 400 ? 'flex' : 'none';
 
-        if (dropdownContent.classList.contains('dropdown-content-visible')) {
-            dropdownArrow.style.display = "block";
+        // Actualizar el texto del título con el símbolo dinámico
+        dropdownTitle.textContent = `${isOpen ? '+' : '+'} ${title}`;
+    });
 
-        } else {
-            dropdownArrow.style.display = "none";
-
+    // Agregar hover para mostrar el símbolo `+` al pasar el cursor
+    dropdownTitle.addEventListener('mouseover', () => {
+        if (!dropdownContent.classList.contains('dropdown-content-visible')) {
+            dropdownTitle.textContent = `+ ${title}`; // Mostrar el símbolo en hover
         }
     });
 
+    dropdownTitle.addEventListener('mouseout', () => {
+        if (!dropdownContent.classList.contains('dropdown-content-visible')) {
+            dropdownTitle.textContent = `${title}`; // Restaurar solo el título
+        }
+    });
+
+    dropdownTitle.classList.add("hover-effect");
 
     if (title == `Exhibition`) {
 
@@ -295,8 +350,9 @@ function createDropdown(container, title, images, startIndex) {
 
     dropdownTitleContaniner.classList.add('dropdownTitleContaniner');
     dropdownTitleContaniner.appendChild(dropdownTitle);
-    dropdownTitleContaniner.appendChild(dropdownArrow);
     dropdown.appendChild(dropdownTitleContaniner);
+    dropdownTitle.appendChild(dropdownArrow);
+
     dropdown.appendChild(dropdownContent);
     container.appendChild(dropdown);
 
@@ -307,10 +363,19 @@ function createDropdown(container, title, images, startIndex) {
     window.addEventListener('resize', adjustDropdownView);
 }
 
+
 // Función para abrir la galería
 function openGallery(startIndex) {
+    // Verificar si es versión móvil
+    if (window.innerWidth <= 400) {
+        console.log("Galería no disponible en versión móvil.");
+        return; // No abrir la galería en móviles
+    }
+
     currentImageIndex = startIndex;
     const gallery = document.getElementById('gallery');
+    gallery.classList.contains("hidden") ? gallery.classList.remove("hidden") : 1;
+
     const otherContent = document.querySelectorAll('#content > :not(#gallery)'); // Seleccionar todo excepto la galería
 
     // Ocultar todo excepto la galería
@@ -320,6 +385,7 @@ function openGallery(startIndex) {
     updateGallery();
 }
 
+
 function updateGallery() {
     if (currentImageIndex < 0 || currentImageIndex >= galleryData.length) {
         closeGallery();
@@ -328,6 +394,9 @@ function updateGallery() {
 
     const galleryImage = document.getElementById('gallery-image');
     const galleryInfo = document.getElementById('gallery-info');
+    const number = document.getElementById("gallery-number");
+
+    number.textContent = (currentImageIndex + 1).toString() + "/" + galleryData.length.toString();
 
     const currentData = galleryData[currentImageIndex];
 

@@ -13,9 +13,14 @@
     font-weight: 500;
     font-style: normal;
 }
+@font-face {
+    font-family: 'OCRAStd';
+    src: url('/fonts/OCRAStd.otf') format('opentype');
+    font-weight: 400;
+}
 *{
     font-family: 'ABCMonumentGrotesk', sans-serif;
-    font-size: calc(12 / 1024 * 100vh);
+    font-size: 12px;
     font-weight: 400;
     padding: 0;
     margin: 0;
@@ -27,64 +32,98 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%; 
-    overflow: hidden; 
+    background-color: #F7F7F7;
+
       }
   
   
-  .main-container {
-    z-index: 0;
-    position: relative;
-    background-color: #F7F7F7;
-    height: 100vh; 
-    width: 100vw; 
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; 
-    padding-right: 7.5px;
-    padding-left: 7.5px;
-}
-header{
-    width: 100%;
-}
+      .main-container {
+        overflow: hidden;
+        z-index: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 100px;
+
+        padding-left: 7.5px;
+        
+        padding-right: 7.5px;
+    }
+
+    #content{
+        width: 100%;
+        margin-top: 60.12px;
+    }
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+        height: 60.12px;
+        background-color: #F7F7F7;
+        z-index: 1000;
+    }
+
 .nav{
+
+    width: 100%;
     margin: 0;
     border-top: 1px solid #BCBCBC;
     border-bottom: 1px solid #BCBCBC;
-    margin-top: calc(36.41 / 1024 * 100vh);
-    padding: calc(8 / 1024 * 100vh) 0;
+    background-color:#F7F7F7;
 
+margin-top: 36.41px;
+padding-top: 4px;
+  padding-bottom: 4px;
 letter-spacing: -0.02em;
 }
 .nav a{
-  
-    margin-right: 17px;
+    
+    margin-right: 32.1px;
+    font-family: 'OCRAStd';
+  font-size: 10px;
+
+
 }
 .nav .home{
     margin-left:26.95px; 
-    margin-right:95px;
+    margin-right:71.44px;
 }
 
 
 footer {
-    border-top: 1px solid #BCBCBC; /* Mantiene el borde superior */
-    padding-top: calc(16 / 1024 * 100vh); /* Padding superior adaptado a la altura del diseño base */
-}
-
-
-footer {
-    position: relative; /* Cambiado de absolute a relative */
+    background-color: #F7F7F7;
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 15px); /* Ajusta el ancho total para incluir los paddings */
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    padding-top: 16px;
+    margin: auto;
+    height: 100px;
     border-top: 1px solid #BCBCBC;
-    padding-top: calc(16 / 1024 * 100vh);
     display: flex;
     justify-content: space-between;
-    height: calc(100 / 1024 * 100vh);
-    width: 100%;
-    margin-top: auto; /* Empuja el footer al final de .main-container */
+    align-items: center;
+    z-index: 1000;
 }
 
+.footer-section  * {
+    
+    font-family: 'OCRAStd' !important;
+   
+    font-size: 10px;
+}
+
+.footer-section {
+    
+   height: 100%;
+}
 
 footer .footer-section:nth-of-type(1) {
-    margin-left:16px; 
+    margin-left: 22.9px;
 }
 
 footer .footer-section:nth-of-type(4) {
@@ -92,99 +131,698 @@ footer .footer-section:nth-of-type(4) {
 }
 
 
-#cover_container {
-    position: absolute;
-    top: 50%; /* Centrar verticalmente */
-    left: 50%; /* Centrar horizontalmente */
-    transform: translate(-50%, -50%); /* Ajustar el centrado */
-    height: calc(800/ 1024 * 100vh); /* Altura relativa basada en 1024px */
-    width: auto; /* El ancho se ajusta automáticamente en proporción */
-    display: flex; /* Flexbox para alinear contenido interno (la imagen) */
-    justify-content: center;
-    align-items: center;
-    z-index: -10;
-}
 
-#cover_container img {
-    height: 100%; /* La imagen ocupa toda la altura del contenedor */
-    width: auto; /* El ancho se ajusta proporcionalmente */
-}
 
 
 #projects {
-    margin-top: calc(59 / 1024 * 100vh); /* Margen superior adaptado */
+    margin-top:58.5px; /* Margen superior adaptado */
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
 }
-
+#projects::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
 #projects .project:last-of-type {
     border-bottom: 1px solid #BCBCBC; /* Se mantiene constante */
 }
 
 .project {
     border-top: 1px solid #BCBCBC; /* Se mantiene constante */
-    padding-top: calc(6 / 1024 * 100vh); /* Padding superior adaptado */
-    padding-bottom: calc(5 / 1024 * 100vh); /* Padding inferior adaptado */
+    padding-top: 10.44px; /* Padding superior adaptado */
+    padding-bottom: 7.16px; /* Padding inferior adaptado */
+    /*height: calc(127.67 / 1170 * 100vh);*/
+    height:127.3px;
     display: flex;
-    align-items: center;
+}
+
+.work-project-info{
+    min-width: 346px;
     position: relative;
-}
-
-.project div {
-    display: flex;
-    gap: calc(23 / 1440 * 100vw); /* Espaciado entre elementos adaptado */
-}
-
-.project > div {
-    margin-left: calc(15 / 1440 * 100vw); /* Margen izquierdo adaptado */
-}
-
-.project div a {
-    font-family: 'ABCMonumentGrotesk-Medium', sans-serif;
-    font-size: calc(24 / 1024 * 100vh); /* Tamaño de fuente relativo */
-    text-align: left;
-}
-
-.project div span {
-    font-size: calc(12 / 1024 * 100vh); /* Tamaño de fuente relativo */
-    font-weight: 500;
-    line-height: calc(0.96 / 1024 * 100vh); /* Altura de línea relativa */
-    display: flex;
-    align-items: center;
-}
-
-.project-hover {
-    display: inline-block;
-    position: relative;
-    padding-left: 7px; /* Padding izquierdo adaptado */
-    padding-right: 3px; /* Padding derecho adaptado */
-    font-size: calc(32 / 1024 * 100vh); /* Fuente relativa en rem o vh */
 }
 .work-project-year{
     position: absolute;
-    left: calc(430/1024 * 100vh);
-}
-
-
-/* Clase general para el hover effect */
-.hover-effect {
-    position: relative; 
-    display: inline-block; 
-    cursor: pointer;
-    overflow: visible; 
-}
-
-.hover-effect::after {
-    content: '';
-    position: absolute;
-    bottom: calc(3/1024*100vh); 
-    left: 0;
+    display: block;
+    bottom: 0;
     right: 0;
-    height: 70%; 
-    background: #F4FF61; 
-    transform: scaleX(0); 
-    transform-origin: center bottom; 
-    z-index: -1; 
+    font-size: 12px; 
+    font-family: 'OCRAStd';
 }
 
-.hover-effect:hover::after {
-    transform: scaleX(1); 
+.work-project-title {
+    position: absolute;
+    top: 0;
+    left: 22.9px;
+    
+}
+.work-project-title span{
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+.hiddenDetails{
+    left: 22.9px;
+    bottom: 4px;
+    position: absolute;
+    color: #000;
+font-family: "OCRAStd";
+font-size:9px;
+visibility: hidden;
+}
+
+.work-project-title:hover span{ 
+    
+    background: #F4FF61;
+}
+.work-project-title:hover ~ .work-project-year {
+    background: #F4FF61; 
+}
+
+.work-project-title:hover ~ .hiddenDetails {
+visibility: visible;
+}
+
+.work-project-plus{
+    position: absolute;
+    font-size:18px;
+    text-transform: capitalize;
+    top: 0;
+    right: 0;
+}.work-project-images {
+    margin-left: 30.59px;
+    height: 100%;
+    display: flex;
+    gap:3.44px;
+}
+
+.work-project-images .work-project-image-container {
+    height: 100%;
+    width: 82px; /* Ancho estándar para imágenes normales */
+    position: relative;
+    overflow: hidden; /* Esconde las partes de la imagen que sobresalgan */
+}
+
+.work-project-images .work-project-image-container img {
+    object-fit: cover; /* Asegura que la imagen llene el contenedor */
+    object-position: center; /* Centra la imagen */
+    width: 100%; /* Por defecto, las imágenes llenan el ancho del contenedor */
+    height: 100%; /* Por defecto, las imágenes llenan la altura del contenedor */
+}
+
+/* Imagen destacada (cropped y más ancha) */
+.work-project-images .work-project-image-container.work-image-crop {
+    width: 144px; /* Ancho del contenedor más grande */
+    height: 100%; /* Mantén la altura consistente con el resto */
+    overflow: hidden; /* Recorta el contenido que exceda los límites */
+}
+
+.work-project-images .work-project-image-container.work-image-crop img {
+    object-fit: cover;
+    object-position: center;
+    height: auto;
+    position: absolute;
+}
+
+
+#backToTop{
+    height: 61.36px;
+    display: flex;
+    align-items: center;
+    
+    padding-left: 22.9px;
+}
+#backToTop > * {
+    font-family: 'OCRAStd';
+    font-size: 8px;
+}
+
+.hover-effect:hover{
+    background: #F4FF61 !important;
+}
+.nav a.active-link {
+    background: #F4FF61;
+}
+
+.nav a.hover-effect:hover {
+    background: #F4FF61;
+}
+
+
+.gentle-hover-shake:hover {
+    animation: tilt-shaking 0.25s infinite;
+  }
+  @keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/*Project top part*/
+#project-content-top{
+    margin-top: 45.3px;
+    margin-left: 26.95px;
+    padding-right: 1em;
+
+}
+
+#project-content-top p{
+    margin-bottom: 1em;
+}
+#project-title{
+    color: #0C0C0C;
+    font-family: "OCRAStd";
+    font-size: 12px;
+    font-style: normal;
+    
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-transform: capitalize;
+margin-bottom:15.74px;
+
+}
+#project-description p{
+    color: #0C0C0C;
+font-size: 24px;
+
+font-style: normal;
+font-weight: 400;
+max-width:  1045.667px;
+}
+
+#project-description p > *{
+    color: #0C0C0C;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+
+.curator-container span{
+    font-family: "OCRAStd";
+    font-size: 10px;
+        color: #0C0C0C;
+}
+
+
+#dropdowns{
+    margin-top:  44.86px;
+
+}
+#dropdowns .dropdown-container:last-of-type .dropdownTitleContaniner{
+    border-bottom: 1px solid #BCBCBC;
+
+}
+#dropdowns .dropdown-container:last-of-type {
+    margin-bottom: 123px;
+
+}
+.dropdownTitleContaniner{
+    border-top: 1px solid #BCBCBC;
+    border-bottom: 1px solid #BCBCBC;
+    margin-bottom: -1.2px;
+
+padding:  5px 0;
+padding-left:0;
+display: flex;
+align-items: center;
+}
+
+/* Título del dropdown */
+.dropdown-title {
+    display: flex;
+flex-direction: row-reverse;
+    margin-right: 10px;
+    color: #0C0C0C;font-size: 24px;
+    font-style: normal;
+
+    text-transform: capitalize;
+    cursor: pointer;
+    display: block;
+    margin-left: 17.08px;
+}
+.arrow{
+    font-size: 24px;
+font-style: normal;
+}
+
+
+
+
+.dropdown-content {
+    padding-left: 20.35px;
+    display: none;
+    padding-top:  46.62px;
+    padding-bottom:  41px;
+    position: relative;
+}
+
+.dropdown-content-visible {
+    display: block;
+}
+
+.exhibition-info{
+    position: absolute;
+    top:  20.74px;
+    left: 24.84px;
+}
+/* Imágenes dentro del contenido del dropdown */
+/* Imagen dentro del dropdown */
+
+
+.dropdown-image {
+    object-fit: cover;
+    z-index: 1;
+    position: relative;
+    width: 163.691px; /* Dimensiones específicas para las imágenes */
+    height: 215.153px; /* Dimensiones específicas para las imágenes */
+    object-fit: cover; /* Recorta la imagen para llenar el espacio */
+    object-position: center; /* Centra la parte visible de la imagen */
+    display: inline-block;
+    margin-right: 11.62px;
+    margin-bottom:11.62px;
+
+}
+.exhibition-image {
+    object-fit: cover;
+    margin-left: 11.62px;
+    margin-bottom:11.62px;
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+    max-height: 109.17px;
+
+
+}
+/* Navegación dentro del contenido del dropdown */
+.dropdown-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Ocultar por defecto */
+    z-index: 1; /* Debajo de los botones */
+    pointer-events: none; /* Evitar que interfiera con los clics */
+}
+
+/* Áreas clicables */
+.dropdown-nav .nav-left,
+.dropdown-nav .nav-right {
+    position: absolute;
+    top: 0;
+    height: 100%; /* Altura completa del contenido */
+    width: 40%; /* Solo ocupa un pequeño margen a los lados de la imagen */
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0); /* Invisibles */
+    z-index: 3; /* Delante de la imagen */
+    pointer-events: auto; /* Permitir interacción solo en las áreas clicables */
+}
+
+.dropdown-nav .nav-left {
+    left: 0; /* En el margen izquierdo del dropdown-content */
+}
+
+.dropdown-nav .nav-right {
+    right: 0; /* En el margen derecho del dropdown-content */
+}
+
+.press{
+    padding-left: 24px;
+    padding-top: 20.51px;
+}
+
+.press-item {
+    margin-bottom:10px;
+    
+}
+
+.press-item a {
+}
+
+.press-item a:hover {
+    text-decoration: underline;
+}
+
+.press-date {
+    margin-top:8px;
+}
+
+/* Galería */.hidden {
+    display: none !important; 
+}
+
+/* Contenedor principal de la galería */
+#gallery {
+    display: flex; /* Coloca los dos contenedores en fila */
+    width: 100%; /* Ocupa todo el ancho del contenedor padre */
+    height: calc(100vh - 160.167px); /* Ocupa toda la altura visible menos el footer */
+    box-sizing: border-box; /* Incluye padding en los cálculos */
+    overflow: hidden; /* Evita scroll */
+}
+
+/* Contenedor de la imagen */
+.gallery-image-container {
+    width: 50%; /* Ocupa la mitad del ancho de la pantalla */
+    height: 100%; /* Ocupa toda la altura de #gallery */
+    display: flex;
+    justify-content: space-between; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    overflow: hidden; /* Evita que la imagen desborde */
+    box-sizing: border-box; /* Incluye padding si es necesario */
+}
+
+/* Imagen dentro del contenedor */
+#gallery-image {
+    padding-bottom: 26px;
+    padding-top: 26px;
+    max-height: 100%; /* La imagen responde a la altura del contenedor */
+    max-width: 100%; /* Se adapta al ancho disponible */ /* Garantiza que no se desborde horizontalmente */
+    object-fit: contain; /* Escala la imagen conservando su proporción */
+}
+
+/* Contenedor de la información */
+#gallery-info {
+    width: 50%; /* Ocupa la otra mitad del ancho de la pantalla */
+    height: 100%; /* Ocupa toda la altura de #gallery */
+    display: flex;
+    flex-direction: column; /* Alinear elementos verticalmente */
+    justify-content: center; /* Centrar contenido verticalmente */
+    box-sizing: border-box; /* Incluye padding en los cálculos */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+#gallery-info-top{
+    padding-bottom: 13.09px;
+    padding-top: 11.2px;
+    text-decoration-line: underline;
+    font-family: "OCRAStd";
+    font-size: 12px;
+}
+#gallery-name,#gallery-date{
+    font-family: "OCRAStd";
+    font-size: 12px;
+    font-style: normal;
+        text-transform: uppercase;
+}
+#gallery-info-bottom{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 14.53px;
+}
+
+#gallery-number{
+padding-left: 25.5px;
+padding-right: 21.14px;    
+color: #0C0C0C;
+font-family: "OCRAStd";
+font-size: 12px;
+}
+
+#gallery-info-container{
+    border-bottom: 1px solid #BCBCBC;
+    border-top: 1px solid #BCBCBC;
+    padding-left: 67.22px;
+
+}
+
+#about-container{
+    height: calc(100vh - 160px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 39px;
+}
+
+#about-contact{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 31.74px;
+    padding-right: 36.78px;
+    position: relative;
+}
+.about-contact-info{
+    display: flex;
+    flex-direction: column;
+    color: #0C0C0C;
+}
+.about-contact-info > *{
+    width: fit-content;
+}
+
+.about-contact-info span, .about-contact-info a{
+    font-family: "OCRAStd";
+    font-size: 10px;
+}
+
+.about-contact-info:hover span{
+    background-color: #F4FF61;
+} 
+#about-description{
+    max-width: 1170.127px;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 24px;
+    text-align: center;
+}
+
+#about-float-description{
+position: absolute;
+bottom: 145.9px;
+left: 31.75px;
+display: flex;
+flex-direction: column;
+max-width: 274.402px;
+background-color: #F4FF61;
+}
+#about-float-description p {
+    color: #000;
+    font-family: "OCRAStd";
+    font-size: 10px; 
+}
+@media (max-width: 400px) {
+    #about-container{
+        height: auto;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    #about-contact{
+        margin-left: 26.01px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 15px;
+        background-color: #F4FF61;
+        order: 3;
+        margin-bottom: 32.9px;
+        width: fit-content;
+        padding: 0;
+    }
+    #about-description{
+        margin-top: 50.98px;
+        text-align: left;
+        max-width: fit-content;
+        margin-left: 28.27px;
+        margin-right: 35.42px;
+        order: 1;
+        margin-bottom: 28.71px;
+    }
+    #about-float-description{
+        margin-left: 26.01px;
+        position: static;
+        display: flex;
+        flex-direction: column;
+        max-width: 316.435px;
+        background-color:  transparent;
+        order: 2;
+        margin-bottom: 32.9px;
+        }
+    
+    .nav a{
+    
+        margin-right: 27px;
+      font-size: 12px;
+    
+    
+    }
+    .nav .home{
+        margin-left:26.01px; 
+        margin-right:51.19px;
+    }
+    
+
+
+    .main-container{
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+    header{
+        padding-left: 0;
+        padding-right: 0;
+        position: static;
+    }
+    #content{
+        margin-top: 0;
+    }
+    footer{
+        margin-top: auto;
+        position: static;
+
+        flex-direction: column-reverse;
+        justify-content: start;
+        padding-top: 15.09px;
+        padding-left: 0;
+        padding-right: 0;
+        height: 122px;
+        width: 100%;
+    
+    }
+    footer .footer-section{
+        width: 100%;
+        height: fit-content;
+
+    }
+    footer .footer-section:nth-of-type(1){
+        padding-left: 18.5px;
+        display: none;
+    }
+    footer .footer-section:nth-of-type(4){
+
+        margin-right: 0;
+        padding-left: 18.5px;
+        margin-bottom: 7.9px;
+        display: flex;
+        gap: 10px;
+            }
+    footer .footer-section:nth-of-type(3){
+        padding-left: 18.5px;
+        margin-bottom: 13.29px;
+        display: flex;
+        flex-direction: column;
+        gap: 6.4px;
+    }
+    footer .footer-section:nth-of-type(2){
+        border-top: 1px solid #BCBCBC;
+        padding-left: 18.5px;     
+          padding-top: 7.99px;
+
+    }
+    #projects{
+        margin-top: 41.55px;
+    }
+    .project{
+        flex-direction: column;
+        min-height: 196.31px;
+        height: fit-content;
+        padding-top: 10.09px;
+        position: relative;
+        justify-content: space-between;
+    }
+    .work-project-info{
+        padding-left: 25.74px;
+        min-width: 150px;
+
+    }
+    .work-project-year{
+        margin-top: 11.48px;
+        margin-bottom: 10px;
+
+        position: static;
+        width: fit-content;
+        font-size: 9px;
+    }
+    
+    .work-project-title {      
+        position: static;
+        font-size: 24px;
+        line-height: 18px;
+    }
+    .hiddenDetails{
+        display: none;
+    }
+    .work-project-plus{
+        right: 18.89px;
+    }
+    .work-project-images{
+        margin-left: 0;
+        width: 100%;
+        overflow-x: scroll;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 21px;
+        flex-wrap: wrap;
+    }
+
+    .work-project-images .work-project-image-container {
+        width: 71.289px;
+        height: 100px;
+    }
+ 
+    /* Imagen destacada (cropped y más ancha) */
+    .work-project-images .work-project-image-container.work-image-crop {
+        width: 124px; /* Ancho del contenedor más grande */
+        height: auto; /* Mantén la altura consistente con el resto */
+        overflow: hidden; /* Recorta el contenido que exceda los límites */
+    }
+#gallery{
+    display: none;
+}
+    #project-content-top {
+        margin-top: 55.97px;
+        margin-left:19.24px;
+        padding-right: 1em;
+      }
+      .dropdown-image, .exhibition-image{
+        padding-left: 13.62px;
+        padding-right: 13.62px;
+        margin-bottom: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        margin-left: 0;
+      }
+      
+      .dropdown-content {
+        padding-left: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      .infoImagesContainer{
+        display: flex;
+        flex-direction: column;
+        padding-top: 14.55px;
+        padding-left: 24.82px;
+        border-bottom: 1px solid #BCBCBC;
+margin-bottom: 15.18px;
+      }
+      #gallery-top-info{
+        display: flex;
+        text-decoration: underline;
+        gap: 1em;
+      }
+      #gallery-bottom-info{
+        margin-top: 9.57px;
+       
+        margin-bottom: 12.09px;
+      }
+      .gallery-number{
+        color: #0C0C0C;
+font-family: "OCRAStd";
+font-size: 12px;
+margin: auto;
+width: fit-content;
+margin-top: 23.71px;
+margin-bottom: 15.55px;
+      }
+      .press-item{
+        padding-top: 14.55px;
+        padding-left: 24.82px;
+      }
 }
