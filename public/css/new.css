@@ -606,7 +606,7 @@ background-color: #F4FF61;
     font-family: "OCRAStd";
     font-size: 10px; 
 }
-@media (max-width: 400px) {
+@media (max-width: 700px) {
     #about-container{
         height: auto;
         justify-content: flex-start;

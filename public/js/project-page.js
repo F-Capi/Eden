@@ -265,7 +265,7 @@ function createDropdown(container, title, images, startIndex) {
     const dropdownTitleContaniner = document.createElement('div');
     // Función para ajustar la vista del dropdown
     function adjustDropdownView() {
-        const isResponsive = window.innerWidth <= 400;
+        const isResponsive = window.innerWidth <= 700;
 
         if (isResponsive) {
             navigationContainer.style.display = 'flex'; // Mostrar navegación en responsivo
@@ -320,7 +320,7 @@ function createDropdown(container, title, images, startIndex) {
 
     dropdownTitle.addEventListener('click', () => {
         const isOpen = dropdownContent.classList.toggle('dropdown-content-visible');
-        navigationContainer.style.display = isOpen && window.innerWidth <= 400 ? 'flex' : 'none';
+        navigationContainer.style.display = isOpen && window.innerWidth <= 700 ? 'flex' : 'none';
 
         // Actualizar el texto del título con el símbolo dinámico
         dropdownTitle.textContent = `${isOpen ? '+' : '+'} ${title}`;
@@ -367,7 +367,7 @@ function createDropdown(container, title, images, startIndex) {
 // Función para abrir la galería
 function openGallery(startIndex) {
     // Verificar si es versión móvil
-    if (window.innerWidth <= 400) {
+    if (window.innerWidth <= 700) {
         console.log("Galería no disponible en versión móvil.");
         return; // No abrir la galería en móviles
     }
