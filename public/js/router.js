@@ -10,7 +10,7 @@ const toggleNumberingAndInfo = (show) => {
 const loadPage = async (page, projectTitle = '') => {
 
     if ((page === 'home' || page === '') && window.matchMedia('(max-width: 700px)').matches) {
-        page = 'about';
+        page = 'work';
     }
     const contentDiv = document.getElementById('content');
 

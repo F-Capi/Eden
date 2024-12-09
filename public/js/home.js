@@ -77,7 +77,7 @@ function handleResponsiveNavigation() {
     const isMobile = window.matchMedia('(max-width: 700px)').matches;
 
     if (isMobile && (location.pathname === '/' || location.pathname === '/home')) {
-        navigateTo('about');
+        navigateTo('work');
     }
 }
 
