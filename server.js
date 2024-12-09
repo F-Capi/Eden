@@ -22,6 +22,16 @@ app.use(express.static(path.join(__dirname, 'public'), {
     }
 }));
 
+app.get('/download/pdf', (req, res) => {
+    const filePath = path.join(__dirname, 'public', 'pdf', 'Eden Zornitser_CV.pdf');
+    res.download(filePath, 'Eden Zornitser_CV.pdf', (err) => {
+        if (err) {
+            console.error('Error al descargar el archivo:', err);
+            res.status(500).send('Error al descargar el archivo');
+        }
+    });
+});
+
 app.get('/api/work', (req, res) => {
     const filePath = path.join(__dirname, 'data', 'work.json');
     fs.readFile(filePath, 'utf8', (err, data) => {
@@ -34,14 +44,26 @@ app.get('/api/work', (req, res) => {
     });
 });
 
+app.get('/api/home', (req, res) => {
+    const filePath = path.join(__dirname, 'data', 'homepage.json');
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            res.status(500).json({ error: 'Error al leer el archivo JSON' });
+        } else {
+            res.setHeader('Content-Type', 'application/json');
+            res.send(data);
+        }
+    });
+});
+
 app.post('/api/project', (req, res) => {
-    const { id } = req.body; // Obtiene el id del cuerpo de la solicitud
+    const { id } = req.body;
 
     if (!id) {
         return res.status(400).json({ error: 'El parámetro "id" es requerido.' });
     }
 
-    const filePath = path.join(__dirname, 'data', `${id}.json`); // Construye la ruta del archivo usando el id
+    const filePath = path.join(__dirname, 'data', `${id}.json`);
 
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {

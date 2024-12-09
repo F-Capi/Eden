@@ -67,31 +67,48 @@ html, body {
     }
 
 .nav{
-
+    position: relative;
     width: 100%;
     margin: 0;
     border-top: 1px solid #BCBCBC;
     border-bottom: 1px solid #BCBCBC;
     background-color:#F7F7F7;
-
 margin-top: 36.41px;
 padding-top: 4px;
   padding-bottom: 4px;
 letter-spacing: -0.02em;
 }
-.nav a{
+
+.nav #nav-links a{
     
     margin-right: 32.1px;
     font-family: 'OCRAStd';
   font-size: 10px;
-
-
+z-index: 1001 !important;
+position: relative;
 }
-.nav .home{
+.nav #nav-links .home{
     margin-left:26.95px; 
     margin-right:71.44px;
 }
 
+.homepage-numbering{
+    position: absolute;
+width: 100%;
+text-align: center;
+    top: 25%;
+    color: #0C0C0C;
+font-family: "OCRAStd";
+font-size: 10px;
+}
+.homepage-info{
+    position: absolute;
+    right: 26.95px;
+    top: 25%;
+    color: #0C0C0C;
+    font-family: "OCRAStd";
+    font-size: 10px;
+}
 
 footer {
     background-color: #F7F7F7;
@@ -606,6 +623,30 @@ background-color: #F4FF61;
     font-family: "OCRAStd";
     font-size: 10px; 
 }
+
+#home-image-container{
+    display: flex; /* Coloca los dos contenedores en fila */
+    width: 100%; /* Ocupa todo el ancho del contenedor padre */
+    height: calc(100vh - 160.167px); /* Ocupa toda la altura visible menos el footer */
+    box-sizing: border-box; /* Incluye padding en los cálculos */
+    overflow: hidden; /* Evita scroll */
+    justify-content: center;
+    align-items: center;
+}
+#home-image-container img{
+    padding-bottom: calc(63.486/1024 * 100vh);
+    padding-top:  calc(63.486/1024 * 100vh);
+    max-height: 100%; /* La imagen responde a la altura del contenedor */
+    max-width: 100%; /* Se adapta al ancho disponible */ /* Garantiza que no se desborde horizontalmente */
+    object-fit: contain; /* Escala la imagen conservando su proporción */}
+
+    .homepage-numbering,
+    .homepage-info {
+        display: none;
+    }
+    
+
+
 @media (max-width: 700px) {
     #about-container{
         height: auto;

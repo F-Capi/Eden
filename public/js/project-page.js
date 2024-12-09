@@ -1,7 +1,6 @@
-let galleryData = []; // Array global para almacenar las imágenes y su información
-let currentImageIndex = -1; // Índice de la imagen actual en la galería
+let galleryData = [];
+let currentImageIndex = -1;
 
-// Función para cargar los detalles del proyecto
 async function loadProjectDetails() {
     const pathParts = location.pathname.split('/').filter(Boolean);
     const projectId = pathParts[1];
@@ -17,15 +16,11 @@ async function loadProjectDetails() {
 
         const data = await response.json();
 
-        console.log('Data received:', data);
-
-        // Actualizar título y descripción del proyecto
         document.getElementById('project-title').textContent = data.name;
         document.getElementById('project-description').innerHTML = data.description;
 
         const dropdownContainer = document.getElementById('dropdowns');
 
-        // Procesar y almacenar imágenes de photography
         if (data.photography) {
             data.photography.forEach(photo => {
                 galleryData.push({
@@ -39,10 +34,9 @@ async function loadProjectDetails() {
             createDropdown(dropdownContainer, 'Photography', data.photography, galleryData.length - data.photography.length);
         }
 
-        // Procesar y almacenar imágenes de cada exhibition
         if (data.exhibitions && Array.isArray(data.exhibitions)) {
             data.exhibitions.forEach((exhibition, index) => {
-                const startIndex = galleryData.length; // Índice inicial en galleryData
+                const startIndex = galleryData.length;
                 exhibition.photography.forEach(url => {
                     galleryData.push({
                         url,
@@ -78,7 +72,6 @@ async function loadProjectDetails() {
             });
         }
 
-        // Procesar y crear dropdown para press
         if (data.press && data.press.length > 0) {
             createPressDropdown(dropdownContainer, 'Press', data.press);
         }
@@ -88,7 +81,6 @@ async function loadProjectDetails() {
     }
 }
 
-// Función para crear un dropdown con enlaces de prensa
 function createPressDropdown(container, title, pressItems) {
     const dropdown = document.createElement('div');
     dropdown.classList.add('dropdown-container');
@@ -100,7 +92,7 @@ function createPressDropdown(container, title, pressItems) {
     const dropdownArrow = document.createElement("span");
 
     dropdownArrow.innerHTML = `+`;
-    dropdownArrow.style.display = "none"; // Ocultar por defecto
+    dropdownArrow.style.display = "none";
     dropdownArrow.classList.add("arrow");
 
     const dropdownContent = document.createElement('div');
@@ -124,27 +116,23 @@ function createPressDropdown(container, title, pressItems) {
         pressItem.appendChild(date);
         dropdownContent.appendChild(pressItem);
     });
-
     dropdownTitle.addEventListener('click', () => {
         const isOpen = dropdownContent.classList.toggle('dropdown-content-visible');
 
-        // Actualizar el texto del título con el símbolo dinámico
-        dropdownTitle.textContent = `${isOpen ? '+' : '+'} ${title}`;
+        dropdownTitle.textContent = `${isOpen ? '+' : ''} ${title}`;
     });
 
-    // Agregar hover para mostrar el símbolo `+` al pasar el cursor
     dropdownTitle.addEventListener('mouseover', () => {
         if (!dropdownContent.classList.contains('dropdown-content-visible')) {
-            dropdownTitle.textContent = `+ ${title}`; // Mostrar el símbolo en hover
+            dropdownTitle.textContent = `+ ${title}`;
         }
     });
 
     dropdownTitle.addEventListener('mouseout', () => {
         if (!dropdownContent.classList.contains('dropdown-content-visible')) {
-            dropdownTitle.textContent = `${title}`; // Restaurar solo el título
+            dropdownTitle.textContent = `${title}`;
         }
     });
-
     dropdownTitle.classList.add("hover-effect");
 
 
@@ -158,8 +146,6 @@ function createPressDropdown(container, title, pressItems) {
 
 }
 
-// Función para crear un dropdown con imágenes
-// Función para inicializar el dropdown
 function createDropdown(container, title, images, startIndex) {
 
 
@@ -177,15 +163,15 @@ function createDropdown(container, title, images, startIndex) {
     const dropdownArrow = document.createElement("span");
 
     dropdownArrow.innerHTML = `+`;
-    dropdownArrow.style.display = "none"; // Ocultar por defecto
+    dropdownArrow.style.display = "none";
     dropdownArrow.classList.add("arrow");
 
 
-    let currentIndex = 0; // Índice actual de la imagen mostrada
+    let currentIndex = 0;
 
     const infoImagesContainer = document.createElement('div');
     infoImagesContainer.classList.add('infoImagesContainer');
-    // Crear la navegación
+
     const navigationContainer = document.createElement('div');
     navigationContainer.classList.add('dropdown-nav');
 
@@ -194,9 +180,8 @@ function createDropdown(container, title, images, startIndex) {
     const rightArea = document.createElement('div');
     rightArea.classList.add('nav-right');
 
-    // Función para actualizar la imagen mostrada
     function updateImage() {
-        dropdownContent.innerHTML = ''; // Limpiar contenido
+        dropdownContent.innerHTML = '';
         const img = document.createElement('img');
         img.src = images[currentIndex].url || images[currentIndex];
         img.alt = images[currentIndex].name || title;
@@ -242,20 +227,18 @@ function createDropdown(container, title, images, startIndex) {
         }
     }
 
-    // Navegar hacia atrás
     leftArea.addEventListener('click', (event) => {
         event.preventDefault();
-        event.stopPropagation(); // Detener propagación para evitar clic en la imagen
+        event.stopPropagation();
         if (currentIndex > 0) {
             currentIndex--;
             updateImage();
         }
     });
 
-    // Navegar hacia adelante
     rightArea.addEventListener('click', (event) => {
         event.preventDefault();
-        event.stopPropagation(); // Detener propagación para evitar clic en la imagen
+        event.stopPropagation();
         if (currentIndex < images.length - 1) {
             currentIndex++;
             updateImage();
@@ -263,24 +246,21 @@ function createDropdown(container, title, images, startIndex) {
     });
 
     const dropdownTitleContaniner = document.createElement('div');
-    // Función para ajustar la vista del dropdown
     function adjustDropdownView() {
         const isResponsive = window.innerWidth <= 700;
 
         if (isResponsive) {
-            navigationContainer.style.display = 'flex'; // Mostrar navegación en responsivo
+            navigationContainer.style.display = 'flex';
             infoImagesContainer.style.display = "flex";
             updateImage();
         } else {
-            dropdownContent.innerHTML = ''; // Limpiar contenido
+            dropdownContent.innerHTML = '';
             if (title === "Exhibition") {
                 const exhibitionInfo = document.createElement('div');
                 exhibitionInfo.classList.add('exhibition-info');
                 exhibitionInfo.style.position = "absolute";
-                // Obtener datos de la primera imagen asociada con la exhibición
                 const exhibitionData = galleryData[startIndex];
 
-                // Añadir la información de la exhibition
                 exhibitionInfo.innerHTML = `
                 <span style="display:inline-block;margin-right:24px;">${exhibitionData.name}</span>
                 <span>${exhibitionData.exhibitionLocation},</span>
@@ -301,7 +281,6 @@ function createDropdown(container, title, images, startIndex) {
                     img.classList.add('dropdown-image');
 
                 }
-                // Abrir galería al clic
                 img.addEventListener('click', () => openGallery(startIndex + index));
 
                 dropdownContent.appendChild(img);
@@ -313,7 +292,6 @@ function createDropdown(container, title, images, startIndex) {
 
     }
 
-    // Añadir las áreas clicables a la navegación
     navigationContainer.appendChild(leftArea);
     navigationContainer.appendChild(rightArea);
 
@@ -322,20 +300,18 @@ function createDropdown(container, title, images, startIndex) {
         const isOpen = dropdownContent.classList.toggle('dropdown-content-visible');
         navigationContainer.style.display = isOpen && window.innerWidth <= 700 ? 'flex' : 'none';
 
-        // Actualizar el texto del título con el símbolo dinámico
-        dropdownTitle.textContent = `${isOpen ? '+' : '+'} ${title}`;
+        dropdownTitle.textContent = `${isOpen ? '+' : ''} ${title}`;
     });
 
-    // Agregar hover para mostrar el símbolo `+` al pasar el cursor
     dropdownTitle.addEventListener('mouseover', () => {
         if (!dropdownContent.classList.contains('dropdown-content-visible')) {
-            dropdownTitle.textContent = `+ ${title}`; // Mostrar el símbolo en hover
+            dropdownTitle.textContent = `+ ${title}`;
         }
     });
 
     dropdownTitle.addEventListener('mouseout', () => {
         if (!dropdownContent.classList.contains('dropdown-content-visible')) {
-            dropdownTitle.textContent = `${title}`; // Restaurar solo el título
+            dropdownTitle.textContent = `${title}`;
         }
     });
 
@@ -356,32 +332,27 @@ function createDropdown(container, title, images, startIndex) {
     dropdown.appendChild(dropdownContent);
     container.appendChild(dropdown);
 
-    // Inicializar vista al cargar
     adjustDropdownView();
 
-    // Ajustar la vista al cambiar el tamaño de la pantalla
     window.addEventListener('resize', adjustDropdownView);
 }
 
 
-// Función para abrir la galería
 function openGallery(startIndex) {
-    // Verificar si es versión móvil
     if (window.innerWidth <= 700) {
         console.log("Galería no disponible en versión móvil.");
-        return; // No abrir la galería en móviles
+        return;
     }
 
     currentImageIndex = startIndex;
     const gallery = document.getElementById('gallery');
     gallery.classList.contains("hidden") ? gallery.classList.remove("hidden") : 1;
 
-    const otherContent = document.querySelectorAll('#content > :not(#gallery)'); // Seleccionar todo excepto la galería
+    const otherContent = document.querySelectorAll('#content > :not(#gallery)');
 
-    // Ocultar todo excepto la galería
     otherContent.forEach(el => el.classList.add('hidden'));
 
-    gallery.style.display = 'flex'; // Mostrar la galería
+    gallery.style.display = 'flex';
     updateGallery();
 }
 
@@ -400,13 +371,10 @@ function updateGallery() {
 
     const currentData = galleryData[currentImageIndex];
 
-    // Actualizar imagen
     galleryImage.src = currentData.url;
 
-    // Construir la información de la galería dinámicamente
     document.getElementById('gallery-name').textContent = currentData.name;
 
-    // Mostrar datos específicos de la exhibición (si existen)
     if (currentData.exhibitionDate) {
         document.getElementById('gallery-date').textContent = currentData.exhibitionLocation + ", " + currentData.exhibitionDate;
         document.getElementById('gallery-info1').textContent = currentData.curator;
@@ -425,35 +393,30 @@ function updateGallery() {
     }
 }
 
-// Función para cerrar la galería
 function closeGallery() {
     const gallery = document.getElementById('gallery');
-    const otherContent = document.querySelectorAll('#content > :not(#gallery)'); // Seleccionar todo excepto la galería
+    const otherContent = document.querySelectorAll('#content > :not(#gallery)');
 
-    // Mostrar todo lo demás
     otherContent.forEach(el => el.classList.remove('hidden'));
 
-    gallery.style.display = 'none'; // Ocultar la galería
-    currentImageIndex = -1; // Reiniciar índice
+    gallery.style.display = 'none';
+    currentImageIndex = -1;
 }
 
-// Navegación por clic en los lados
 document.getElementById('gallery').addEventListener('click', event => {
     const clickX = event.clientX;
     const windowWidth = window.innerWidth;
 
     if (clickX < windowWidth * 0.25) {
-        // Clic en el lado izquierdo
         if (currentImageIndex === 0) {
-            closeGallery(); // Cerrar galería al inicio
+            closeGallery();
         } else {
             currentImageIndex--;
             updateGallery();
         }
     } else if (clickX > windowWidth * 0.75) {
-        // Clic en el lado derecho
         if (currentImageIndex === galleryData.length - 1) {
-            closeGallery(); // Cerrar galería al final
+            closeGallery();
         } else {
             currentImageIndex++;
             updateGallery();
@@ -461,5 +424,4 @@ document.getElementById('gallery').addEventListener('click', event => {
     }
 });
 
-// Cargar detalles del proyecto al inicio
 loadProjectDetails();

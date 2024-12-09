@@ -4,12 +4,11 @@ async function loadProjects() {
     const scrollToTopButton = document.getElementById('backToTop');
 
 
-    // Agrega un evento al botón para que el contenedor vuelva al inicio
     scrollToTopButton.addEventListener('click', (e) => {
         e.preventDefault();
         window.scrollTo({
-            top: 0, // Posición inicial (arriba del todo)
-            behavior: 'smooth' // Desplazamiento suave
+            top: 0,
+            behavior: 'smooth'
         });
     });
 
