@@ -412,6 +412,7 @@ font-style: normal;
 
 
 .dropdown-image {
+    cursor: pointer;
     object-fit: cover;
     z-index: 1;
     position: relative;
@@ -425,6 +426,7 @@ font-style: normal;
 
 }
 .exhibition-image {
+    cursor: pointer;
     object-fit: cover;
     margin-left: 11.62px;
     margin-bottom:11.62px;
@@ -602,6 +604,7 @@ font-size: 12px;
     background-color: #F4FF61;
 } 
 #about-description{
+    line-height: 107%; /* 25.68px */
     margin-left: 60px;
     margin-right: 60px;
     font-size: 24px;
@@ -782,7 +785,6 @@ background-color: #F4FF61;
     .work-project-title {      
         position: static;
         font-size: 24px;
-        line-height: 18px;
     }
     .hiddenDetails{
         display: none;

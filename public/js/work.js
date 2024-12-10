@@ -59,8 +59,12 @@ async function loadProjects() {
             project.imgs.forEach(img => {
                 const di = document.createElement("div");
                 di.classList.add("work-project-image-container");
+
+                const a = document.createElement("a");
+                a.href = `/project/${project.id}`;
                 const i = document.createElement("img");
-                di.appendChild(i);
+                a.appendChild(i);
+                di.appendChild(a);
                 i.src = img.url;
                 if (img.crop) {
                     di.classList.add("work-image-crop");

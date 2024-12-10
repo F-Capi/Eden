@@ -407,14 +407,14 @@ document.getElementById('gallery').addEventListener('click', event => {
     const clickX = event.clientX;
     const windowWidth = window.innerWidth;
 
-    if (clickX < windowWidth * 0.25) {
+    if (clickX < windowWidth * 0.5) {
         if (currentImageIndex === 0) {
-            closeGallery();
+            // closeGallery();
         } else {
             currentImageIndex--;
             updateGallery();
         }
-    } else if (clickX > windowWidth * 0.75) {
+    } else if (clickX > windowWidth * 0.5) {
         if (currentImageIndex === galleryData.length - 1) {
             closeGallery();
         } else {
