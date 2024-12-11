@@ -194,6 +194,7 @@ footer .footer-section:nth-of-type(4) {
     
 }
 .work-project-title span{
+    line-height: 99%;
     font-size: 24px;
     text-transform: capitalize;
 }
@@ -221,6 +222,7 @@ visibility: visible;
 }
 
 .work-project-plus{
+    user-select: none;
     position: absolute;
     font-size:18px;
     text-transform: capitalize;
@@ -418,6 +420,7 @@ font-style: normal;
 
 
 .dropdown-image {
+    user-select: none;
     cursor: pointer;
     object-fit: cover;
     z-index: 1;
@@ -432,6 +435,7 @@ font-style: normal;
 
 }
 .exhibition-image {
+    user-select: none;
     cursor: pointer;
     object-fit: cover;
     margin-left: 11.62px;
@@ -508,10 +512,12 @@ font-style: normal;
     height: calc(100vh - 160.167px); /* Ocupa toda la altura visible menos el footer */
     box-sizing: border-box; /* Incluye padding en los cálculos */
     overflow: hidden; /* Evita scroll */
+    cursor: none;
 }
 
 /* Contenedor de la imagen */
 .gallery-image-container {
+    
     width: 50%; /* Ocupa la mitad del ancho de la pantalla */
     height: 100%; /* Ocupa toda la altura de #gallery */
     display: flex;
@@ -523,6 +529,7 @@ font-style: normal;
 
 /* Imagen dentro del contenedor */
 #gallery-image {
+    user-select: none;
     padding-bottom: 26px;
     padding-top: 26px;
     max-height: 100%; /* La imagen responde a la altura del contenedor */
@@ -565,15 +572,45 @@ padding-right: 21.14px;
 color: #0C0C0C;
 font-family: "OCRAStd";
 font-size: 12px;
+
+user-select: none;
+}
+#gallery > * {
+    user-select: none;
 }
 
 #gallery-info-container{
     border-bottom: 1px solid #BCBCBC;
     border-top: 1px solid #BCBCBC;
     padding-left: 67.22px;
-
+    position: relative;
 }
 
+#custom-cursor {
+    text-transform: uppercase;
+    position: absolute;
+    pointer-events: none; /* No interfiere con clics */
+    font-size: 12x;
+    background-color: #F4FF61;
+    font-family: "OCRAStd";
+    color: black;
+    transform: translate(-50%, -50%);
+    display: none; /* Oculto inicialmente */
+    z-index: 1000; /* Encima de otros elementos */
+}
+
+
+
+#back-to-project{
+    user-select: none; 
+    cursor: pointer;
+    position: absolute;
+    bottom: -20px;
+    left: 67.29px;
+    color: #000;
+font-family: "OCRAStd";
+font-size: 8px;
+}
 #about-container{
     height: calc(100vh - 160px);
     width: 100%;
@@ -632,23 +669,33 @@ background-color: #F4FF61;
     font-family: "OCRAStd";
     font-size: 10px; 
 }
-
-#home-image-container{
-    display: flex; /* Coloca los dos contenedores en fila */
-    width: 100%; /* Ocupa todo el ancho del contenedor padre */
-    height: calc(100vh - 160.167px); /* Ocupa toda la altura visible menos el footer */
-    box-sizing: border-box; /* Incluye padding en los cálculos */
-    overflow: hidden; /* Evita scroll */
+#home-image-container {
+    display: flex; /* Coloca los elementos centrados */
+    width: 100%; /* Ocupa todo el ancho */
+    height: calc(100vh - 160.167px); /* Altura ajustada */
+    box-sizing: border-box;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
 }
-#home-image-container img{
-    padding-bottom: calc(63.486/1024 * 100vh);
-    padding-top:  calc(63.486/1024 * 100vh);
-    max-height: 100%; /* La imagen responde a la altura del contenedor */
-    max-width: 100%; /* Se adapta al ancho disponible */ /* Garantiza que no se desborde horizontalmente */
-    object-fit: contain; /* Escala la imagen conservando su proporción */}
 
+#home-image-container img {
+    user-select: none;
+    padding-bottom: calc(63.486 / 1024 * 100vh);
+    padding-top: calc(63.486 / 1024 * 100vh);
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* Mantén la proporción */
+    transition: opacity 0.2s ease-in-out; /* Transición suave */
+    opacity: 0; /* Inicialmente oculto */
+}
+
+#home-image-container img.loaded {
+    opacity: 1; /* Mostrar imagen al cargar */
+}
+
+
+    
     .homepage-numbering,
     .homepage-info {
         display: none;
@@ -706,11 +753,8 @@ background-color: #F4FF61;
                 font-size: 12px;
             }
     .nav a{
-    
         margin-right: 27.69px;
       font-size: 12px;
-    
-    
     }
     .nav .home{
         margin-left:25.55px; 
@@ -812,29 +856,58 @@ background-color: #F4FF61;
         display: none;
     }
     .work-project-plus{
+        cursor: default; /* Cursor estándar */
+        user-select: none; 
         right: 18.89px;
+        cursor: default; /* Cursor estándar */
+        user-select: none; 
     }
-    .work-project-images{
-        margin-left: 0;
-        width: 100%;
-        overflow-x: scroll;
-        display: flex;
-        justify-content: flex-start;
-        padding-left: 21px;
-        flex-wrap: wrap;
-    }
+/* Contenedor de imágenes con desplazamiento horizontal */
+.work-project-images {
+    margin-left: 0;
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 21px;
+    flex-wrap: wrap;
+}
 
-    .work-project-images .work-project-image-container {
-        width: 71.289px;
-        height: 100px;
-    }
- 
-    /* Imagen destacada (cropped y más ancha) */
-    .work-project-images .work-project-image-container.work-image-crop {
-        width: 124px; /* Ancho del contenedor más grande */
-        height: auto; /* Mantén la altura consistente con el resto */
-        overflow: hidden; /* Recorta el contenido que exceda los límites */
-    }
+/* Contenedor de imagen estándar */
+.work-project-images .work-project-image-container {
+    width: 71.289px;
+    height: 100px;
+    background-color: #f0f0f0; /* Placeholder mientras la imagen carga */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Imagen estándar */
+.work-project-images .work-project-image-container img {
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.2s ease-in-out; /* Transición suave */
+    object-fit: cover; /* Asegura que las imágenes llenen el contenedor */
+    width: 100%;
+    height: 100%;
+}
+
+/* Imagen cargada */
+.work-project-images .work-project-image-container img.loaded {
+    opacity: 1; /* Mostrar imagen al cargar */
+}
+
+/* Imagen destacada (cropped) */
+.work-project-images .work-project-image-container.work-image-crop {
+    width: 124px; /* Ancho del contenedor más grande */
+    height: 100px; /* Altura consistente con el resto */
+    overflow: hidden; /* Recortar contenido excedente */
+}
+
+/* Imagen destacada dentro de contenedor cropped */
+.work-project-images .work-project-image-container.work-image-crop img {
+    object-fit: cover; /* Relleno sin deformar */
+}
+
 #gallery{
     display: none;
 }

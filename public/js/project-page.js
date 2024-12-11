@@ -92,7 +92,6 @@ async function loadProjectDetails() {
         }
         // Precargar todas las imágenes
         await preloadImages(galleryData);
-        console.log('Todas las imágenes se han precargado.');
     } catch (error) {
         console.error('Error loading project details:', error);
     }
@@ -371,7 +370,11 @@ function openGallery(startIndex) {
     otherContent.forEach(el => el.classList.add('hidden'));
 
     gallery.style.display = 'flex';
+
+    const back = document.getElementById("back-to-project");
+    back.addEventListener("click", closeGallery);
     updateGallery();
+
 }
 
 
@@ -421,25 +424,72 @@ function closeGallery() {
     currentImageIndex = -1;
 }
 
-document.getElementById('gallery').addEventListener('click', event => {
-    const clickX = event.clientX;
-    const windowWidth = window.innerWidth;
 
-    if (clickX < windowWidth * 0.5) {
-        if (currentImageIndex === 0) {
-            // closeGallery();
-        } else {
+document.getElementById('gallery').addEventListener('click', (event) => {
+    const galleryImage = document.getElementById('gallery-image');
+    const rect = galleryImage.getBoundingClientRect(); // Obtener las dimensiones de la imagen
+    const centerX = rect.left + rect.width / 2; // Calcular el centro de la imagen
+    const clickX = event.clientX;
+
+    if (clickX < centerX) {
+        // Mover hacia atrás
+        if (currentImageIndex > 0) {
             currentImageIndex--;
             updateGallery();
         }
-    } else if (clickX > windowWidth * 0.5) {
-        if (currentImageIndex === galleryData.length - 1) {
-            closeGallery();
-        } else {
+    } else {
+        // Mover hacia adelante
+        if (currentImageIndex < galleryData.length - 1) {
             currentImageIndex++;
             updateGallery();
         }
     }
 });
+
+document.getElementById('gallery').addEventListener('mousemove', (event) => {
+    const backButton = document.getElementById('back-to-project');
+    const cursor = document.getElementById('custom-cursor');
+    const galleryImage = document.getElementById('gallery-image');
+    const rect = galleryImage.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+
+    // Verificar si el ratón está sobre el botón
+    const backButtonRect = backButton.getBoundingClientRect();
+    const isHoveringBackButton =
+        event.clientX >= backButtonRect.left &&
+        event.clientX <= backButtonRect.right &&
+        event.clientY >= backButtonRect.top &&
+        event.clientY <= backButtonRect.bottom;
+
+    if (isHoveringBackButton) {
+        // Mostrar el cursor normal y ocultar el texto dinámico
+        cursor.style.display = 'none';
+        backButton.style.cursor = 'pointer';
+    } else {
+        // Mostrar el cursor dinámico y ocultar el cursor predeterminado
+        cursor.style.display = 'block';
+        cursor.style.left = `${event.pageX}px`;
+        cursor.style.top = `${event.pageY}px`;
+
+        if (event.clientX < centerX) {
+            cursor.textContent = 'prev';
+        } else {
+            cursor.textContent = 'next';
+        }
+    }
+});
+
+
+document.getElementById('gallery').addEventListener('mouseleave', () => {
+    const cursor = document.getElementById('custom-cursor');
+    cursor.style.display = 'none'; // Ocultar el cursor dinámico
+});
+
+document.getElementById('gallery').addEventListener('mouseenter', () => {
+    const cursor = document.getElementById('custom-cursor');
+    cursor.style.display = 'block'; // Mostrar el cursor dinámico
+});
+
+
 
 loadProjectDetails();
