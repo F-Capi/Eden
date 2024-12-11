@@ -1,6 +1,21 @@
 let galleryData = [];
 let currentImageIndex = -1;
 
+async function preloadImages(images) {
+    const promises = images.map((image) => {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = image.url;
+
+            img.onload = () => resolve(img); // Resuelve la promesa cuando la imagen se carga
+            img.onerror = () => reject(new Error(`Failed to load image: ${image.url}`));
+        });
+    });
+
+    return Promise.all(promises); // Espera a que todas las imágenes se carguen
+}
+
+
 async function loadProjectDetails() {
     const pathParts = location.pathname.split('/').filter(Boolean);
     const projectId = pathParts[1];
@@ -75,7 +90,9 @@ async function loadProjectDetails() {
         if (data.press && data.press.length > 0) {
             createPressDropdown(dropdownContainer, 'Press', data.press);
         }
-
+        // Precargar todas las imágenes
+        await preloadImages(galleryData);
+        console.log('Todas las imágenes se han precargado.');
     } catch (error) {
         console.error('Error loading project details:', error);
     }
@@ -182,6 +199,8 @@ function createDropdown(container, title, images, startIndex) {
 
     function updateImage() {
         dropdownContent.innerHTML = '';
+        const d = document.createElement("div");
+        d.classList.add("fix-jump");
         const img = document.createElement('img');
         img.src = images[currentIndex].url || images[currentIndex];
         img.alt = images[currentIndex].name || title;
@@ -199,12 +218,10 @@ function createDropdown(container, title, images, startIndex) {
 
 
             dropdownContent.appendChild(infoImagesContainer);
-            dropdownContent.appendChild(img);
+            d.appendChild(img);
+            dropdownContent.appendChild(d);
             dropdownContent.appendChild(navigationContainer);
             dropdownContent.appendChild(num);
-
-
-
         } else {
 
             infoImagesContainer.innerHTML = `<div id="gallery-top-info"><p id="gallery-name">${images[currentIndex].name} ${images[currentIndex].date}</p></div>
@@ -218,7 +235,8 @@ function createDropdown(container, title, images, startIndex) {
 
 
             dropdownContent.appendChild(infoImagesContainer);
-            dropdownContent.appendChild(img);
+            d.appendChild(img);
+            dropdownContent.appendChild(d);
             dropdownContent.appendChild(navigationContainer);
             dropdownContent.appendChild(num);
 

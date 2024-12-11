@@ -2,7 +2,8 @@
 @font-face {
     font-family: 'ABCMonumentGrotesk';
     src: url('/fonts/ABCMonumentGrotesk-Regular-Trial.woff2?v=1') format('woff2'),
-    url('/fonts/ABCMonumentGrotesk-Regular-Trial.woff?v=1') format('woff');
+    url('/fonts/ABCMonumentGrotesk-Regular-Trial.woff?v=1') format('woff'),
+    url('/fonts/ABCMonumentGrotesk-Regular-Trial.otf?v=1') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
@@ -653,7 +654,10 @@ background-color: #F4FF61;
         display: none;
     }
     
-
+    
+.fix-jump{
+    min-height: 300px;
+}
 
 @media (max-width: 700px) {
     #about-container{

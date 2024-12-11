@@ -12,6 +12,7 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public'), {
     setHeaders: (res, filePath) => {
+        res.setHeader('Access-Control-Allow-Origin', '*');
         if (filePath.endsWith('.woff2')) {
             res.setHeader('Content-Type', 'font/woff2');
         } else if (filePath.endsWith('.woff')) {
