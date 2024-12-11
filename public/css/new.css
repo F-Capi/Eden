@@ -862,7 +862,7 @@ background-color: #F4FF61;
         cursor: default; /* Cursor estándar */
         user-select: none; 
     }
-    .work-project-images {
+    .work-project-images{
         margin-left: 0;
         width: 100%;
         overflow-x: scroll;
@@ -871,38 +871,18 @@ background-color: #F4FF61;
         padding-left: 21px;
         flex-wrap: wrap;
     }
-    
+
     .work-project-images .work-project-image-container {
         width: 71.289px;
         height: 100px;
-        position: relative;
-        background-color: #f0f0f0; /* Placeholder mientras la imagen carga */
-        overflow: hidden;
     }
-    
-    .work-project-images .work-project-image-container img {
-        opacity: 0; /* Ocultar inicialmente */
-        transition: opacity 0.2s ease-in-out; /* Transición suave */
-        object-fit: cover; /* Rellenar el contenedor sin deformar */
-        width: 100%; /* Adaptarse al contenedor */
-        height: 100%;
-    }
-    
-    .work-project-images .work-project-image-container img.loaded {
-        opacity: 1; /* Mostrar al cargar */
-    }
-    
+ 
     /* Imagen destacada (cropped y más ancha) */
     .work-project-images .work-project-image-container.work-image-crop {
-        width: 124px; /* Mantener el ancho personalizado */
-        height: 100px; /* Mantener la altura consistente */
-        overflow: hidden; /* Recortar contenido sobrante */
+        width: 124px; /* Ancho del contenedor más grande */
+        height: auto; /* Mantén la altura consistente con el resto */
+        overflow: hidden; /* Recorta el contenido que exceda los límites */
     }
-    
-    .work-project-images .work-project-image-container.work-image-crop img {
-        object-fit: cover; /* Asegurar el ajuste adecuado */
-    }
-    
 #gallery{
     display: none;
 }
