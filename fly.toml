@@ -20,3 +20,13 @@ primary_region = 'mad'
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+[[services.http_checks]]
+  path = "/"
+  method = "get"
+  redirect_to = "https://www.edenzornitser.com"
+
