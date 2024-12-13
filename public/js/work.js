@@ -1,8 +1,6 @@
-
 async function loadProjects() {
     const contentDiv = document.querySelector('#projects');
     const scrollToTopButton = document.getElementById('backToTop');
-
 
     scrollToTopButton.addEventListener('click', (e) => {
         e.preventDefault();
@@ -30,12 +28,7 @@ async function loadProjects() {
             const projectInfo = document.createElement('div');
             projectInfo.classList.add('work-project-info');
 
-
-
-
             projectElement.appendChild(projectInfo);
-
-
 
             const span = document.createElement('span');
             span.innerHTML = project.year;
@@ -55,8 +48,7 @@ async function loadProjects() {
             const images = document.createElement("div");
             images.classList.add("work-project-images");
 
-
-            project.imgs.forEach(img => {
+            project.imgs.forEach((img, index) => {
                 const di = document.createElement("div");
                 di.classList.add("work-project-image-container");
 
@@ -66,23 +58,27 @@ async function loadProjects() {
                 a.appendChild(i);
                 di.appendChild(a);
                 i.src = img.url;
+
                 if (img.crop) {
                     di.classList.add("work-image-crop");
                 }
                 if (img.top) {
                     i.style.top = img.top;
-
                 }
                 if (img.left) {
                     i.style.left = img.left;
-
                 }
                 if (img.width) {
                     i.style.width = img.width;
-
                 }
+
+                // Agrega la clase de animación y el retraso
+                i.classList.add('image-fade-in');
+                i.style.animationDelay = `${index * 0.1}s`;
+
                 images.appendChild(di);
             });
+
             projectElement.appendChild(images);
             contentDiv.appendChild(projectElement);
         });

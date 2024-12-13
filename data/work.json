@@ -45,14 +45,14 @@
                {"url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/up59jycqks8jzrbismbe" }      
 
               ] ,
-              "details":"Testosterone, Chromogenic print<br> scan Archival pigment print,<br> Analog color photography"
+              "details":"Testosterone, Chromogenic print<br>Analog color photography, Archival <br>pigment print"
         },
         {
             "id":"paintings-with-my-iphone-flash",
             "name": "<span>Paintings with My iPhone</span><br> <span>Flash</span>",
             "year": 2023,
             "imgs": [ {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/jnrt29jkqmexsx6sdjl0"}],
-            "details":"Photographic negative,<br> Testosterone, Chromogenic print"
+            "details":"Chromogenic print"
         },
         {
             "id":"you-could-be-me-i-could-be-you",

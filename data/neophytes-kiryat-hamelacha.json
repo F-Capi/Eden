@@ -1,7 +1,7 @@
 {
     "id":"neophytes-kiryat-hamelacha",
     "name": "Neophytes: Kiryat Hamelacha",
-    "description": "<p>‘Neophytes: Kiryat Hamelacha’ continues my inquiry into identity's physical, emotional, and poetic dimensions. In this work, I focus on the local queer community in Tel Aviv, utilizing a downtown industrial area known as ‘Kiryat Hamelacha’ as my studio.</p><p>By photographing queer individuals, I aim to delve into the rituals surrounding identity and the profound significance of living in a constant state of change. The term \"neophytes\" refers to those who are neither fully integrated into a specific place or class but exist in a perpetual state of transition.</p><p>Throughout the series, I revisit some individuals with whom I have already begun a dialogue, as introduced in my previous work, while incorporating new faces I have encountered. This project underscores the importance of community and seeks to explore the experience of being queer within the intricate reality of Israel-Palestine.</p>",
+    "description": "<p>‘Neophytes: Kiryat Hamelacha’ continues my inquiry into identity's physical, emotional, and poetic dimensions. In this work, I focus on the local queer community in Tel Aviv, utilizing a downtown industrial area known as ‘Kiryat Hamelacha’ as my studio.</p><p>By photographing queer individuals, I aim to delve into the rituals surrounding identity and the profound significance of living in a constant state of change. The term \"Neophytes\" refers to those who are neither fully integrated into a specific place or class but exist in a perpetual state of transition.</p><p>Throughout the series, I revisit some individuals with whom I have already begun a dialogue, as introduced in my previous work, while incorporating new faces I have encountered.<br>This project underscores the importance of community and seeks to explore the experience of being queer within the intricate reality of Israel-Palestine.</p>",
     "photography": [
         {
             "name":"Eden",
@@ -46,6 +46,48 @@
             "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/fu8kqus3cppz2boshogc"
         } ,
         {
+            "name":"Michelle",
+            "date":"December 8, 2024",
+            "size":"48 1/2\" x 39\" (123 cm x 98.5 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/r9a4njxesfwzoblwiptw"
+        } ,
+        {
+            "name":"Yona",
+            "date":"November 30, 2024",
+            "size":"48 1/2\" x 39\" (123 cm x 98.5 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/l3kjhcoelism3mwsejpm"
+        } ,
+        {
+            "name":"Nitzan",
+            "date":"October 23, 2024",
+            "size":"48 1/2\" x 39\" (123 cm x 98.5 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/kidavbb3jc3d3oby9i9c"
+        } ,
+        {
+            "name":"Me",
+            "date":"December 8, 2024",
+            "size":"48 1/2\" x 39\" (123 cm x 98.5 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/x1jfhxn3di004rw3bj5q"
+        } ,
+        {
+            "name":"Youssef",
+            "date":"April 21, 2024",
+            "size":"48 1/2\" x 39\" (123 cm x 98.5 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/lhwupqrgqy6wlvdlttnt"
+        },
+        {
+            "name":"Danny",
+            "date":"August 17, 2024",
+            "size":"48 1/2\" x 39\" (123 cm x 98.5 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/lo346vs4f42zon40pyss"
+        } ,
+        {
             "name":"Mika",
             "date":"September 4, 2024",
             "size":"48 1/2\" x 39\" (123 cm x 98.5 cm)",
@@ -53,11 +95,11 @@
             "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/dsuc92iarojr2snwcd1k"
         } ,
         {
-            "name":"Danny",
-            "date":"August 17, 2024",
+            "name":"Daniel",
+            "date":"October 26, 2024",
             "size":"48 1/2\" x 39\" (123 cm x 98.5 cm)",
             "color":"Analog color photography, Archival pigment print",
-            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/lo346vs4f42zon40pyss"
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/dso4pyww7imw8ljuo33s"
         } ,
         {
             "name":"Shemesh",
@@ -74,18 +116,12 @@
             "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/orw8d22mil8mrr6jrh7c"
         } ,
         {
-            "name":"Youssef",
-            "date":"April 21, 2024",
+            "name":"Guy",
+            "date":"October 23, 2024",
             "size":"48 1/2\" x 39\" (123 cm x 98.5 cm)",
             "color":"Analog color photography, Archival pigment print",
-            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/lhwupqrgqy6wlvdlttnt"
-        } ,
-        {
-            "name":"Oliver",
-            "date":"May 16, 2024",
-            "size":"48 1/2\" x 39\" (123 cm x 98.5 cm)",
-            "color":"Analog color photography, Archival pigment print",
-            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/c3xyxwqyes9oxhrskmzw"
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/vsp2ma08i9qwerawa7cv"
         } 
+       
     ]
 }

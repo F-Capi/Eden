@@ -50,41 +50,7 @@ async function loadProjectDetails() {
         }
 
         if (data.exhibitions && Array.isArray(data.exhibitions)) {
-            data.exhibitions.forEach((exhibition, index) => {
-                const startIndex = galleryData.length;
-                exhibition.photography.forEach(url => {
-                    galleryData.push({
-                        url,
-                        name: exhibition.name,
-                        exhibitionDate: exhibition.date,
-                        exhibitionLocation: exhibition.location,
-                        curator: exhibition.curator,
-                        assistant: exhibition.assistant,
-                        size: "",
-                        date: "",
-                        color: ""
-                    });
-                });
-
-                let photos = [];
-                exhibition.photography.forEach(photo => {
-                    photos.push({
-                        url: photo,
-                        name: exhibition.name,
-                        exhibitionDate: exhibition.date,
-                        exhibitionLocation: exhibition.location,
-                        curator: exhibition.curator,
-                        assistant: exhibition.assistant
-                    });
-                });
-
-                createDropdown(
-                    dropdownContainer,
-                    `Exhibition`,
-                    photos,
-                    startIndex
-                );
-            });
+            createExhibitionDropdown(dropdownContainer, 'Exhibitions', data.exhibitions);
         }
 
         if (data.press && data.press.length > 0) {
@@ -96,6 +62,193 @@ async function loadProjectDetails() {
         console.error('Error loading project details:', error);
     }
 }
+
+function createExhibitionDropdown(container, title, exhibitions) {
+    const exhibitionDropdown = document.createElement('div');
+    exhibitionDropdown.classList.add('dropdown-container');
+
+    const dropdownTitleContaniner = document.createElement('div');
+    dropdownTitleContaniner.classList.add('dropdownTitleContaniner');
+
+    const dropdownTitle = document.createElement('div');
+    dropdownTitle.classList.add('dropdown-title', 'hover-effect');
+    dropdownTitle.textContent = title;
+
+    dropdownTitleContaniner.appendChild(dropdownTitle);
+    exhibitionDropdown.appendChild(dropdownTitleContaniner);
+
+    const dropdownContent = document.createElement('div');
+    dropdownContent.classList.add('dropdown-content');
+    dropdownContent.style.paddingTop = "16px";
+    dropdownContent.style.paddingBottom = "0px";
+    exhibitions.forEach((exhibition, groupIndex) => {
+        const exhibitionGroup = document.createElement('div');
+        exhibitionGroup.classList.add('exhibition-group');
+
+        const exhibitionInfo = document.createElement('div');
+        exhibitionInfo.classList.add('exhibition-info');
+        exhibitionInfo.innerHTML = `
+            <p class="exhibition-date">${exhibition.date}</p><p class="exhibition-details">+ ${exhibition.location}</p>
+            <p class="exhibition-curator">Curated by ${exhibition.curator}</p>
+            ${exhibition.assistant ? `<p class="exhibition-assistant">Assistant: ${exhibition.assistant}</p>` : ''}
+        `;
+
+        const exhibitionImagesContainer = document.createElement('div');
+        exhibitionImagesContainer.classList.add('exhibition-images');
+
+        let currentIndex = 0;
+        const navigationContainer = document.createElement('div');
+        navigationContainer.classList.add('dropdown-nav');
+
+        const leftArea = document.createElement('div');
+        leftArea.classList.add('nav-left');
+        const rightArea = document.createElement('div');
+        rightArea.classList.add('nav-right');
+
+        const numberDisplay = document.createElement('p');
+        numberDisplay.classList.add('gallery-number');
+
+        // Add all images to galleryData and keep track of their index
+        exhibition.photography.forEach((url) => {
+            galleryData.push({
+                url,
+                name: exhibition.name,
+                exhibitionDate: exhibition.date,
+                exhibitionLocation: exhibition.location,
+                curator: exhibition.curator,
+                assistant: exhibition.assistant,
+                size: "",
+                date: "",
+                color: ""
+            });
+        });
+
+        function updateImage() {
+            exhibitionImagesContainer.innerHTML = '';
+            const img = document.createElement('img');
+            img.src = exhibition.photography[currentIndex];
+            img.alt = exhibition.name;
+            img.classList.add('exhibition-image');
+
+            img.addEventListener('click', () => {
+                if (window.innerWidth > 700) {
+                    const galleryIndex = galleryData.findIndex(
+                        data => data.url === exhibition.photography[currentIndex]
+                    );
+                    if (galleryIndex !== -1) openGallery(galleryIndex);
+                }
+            });
+
+            exhibitionImagesContainer.appendChild(img);
+            numberDisplay.textContent = `${currentIndex + 1} / ${exhibition.photography.length}`;
+        }
+
+        leftArea.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateImage();
+            }
+        });
+
+        rightArea.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            if (currentIndex < exhibition.photography.length - 1) {
+                currentIndex++;
+                updateImage();
+            }
+        });
+
+        const adjustView = () => {
+            if (window.innerWidth <= 700) {
+                navigationContainer.style.display = 'flex';
+                numberDisplay.style.display = 'block';
+                updateImage();
+            } else {
+                exhibitionImagesContainer.innerHTML = '';
+                numberDisplay.style.display = 'none';
+                exhibition.photography.forEach((url) => {
+                    const img = document.createElement('img');
+                    img.classList.add('exhibition-image');
+                    img.src = url;
+                    img.alt = exhibition.name;
+
+                    const galleryIndex = galleryData.findIndex(data => data.url === url);
+                    if (galleryIndex !== -1) {
+                        img.addEventListener('click', () => openGallery(galleryIndex));
+                    }
+
+                    exhibitionImagesContainer.appendChild(img);
+                });
+                navigationContainer.style.display = 'none';
+            }
+        };
+
+
+        navigationContainer.appendChild(leftArea);
+        navigationContainer.appendChild(rightArea);
+
+        exhibitionGroup.appendChild(exhibitionInfo);
+        exhibitionGroup.appendChild(exhibitionImagesContainer);
+        exhibitionGroup.appendChild(navigationContainer);
+        exhibitionGroup.appendChild(numberDisplay);
+        dropdownContent.appendChild(exhibitionGroup);
+
+        adjustView();
+        window.addEventListener('resize', adjustView);
+    });
+
+
+    dropdownTitle.addEventListener('click', () => {
+        const isOpen = dropdownContent.classList.toggle('dropdown-content-visible');
+
+        if (isOpen) {
+            dropdownTitleContaniner.style.borderBottom = "1px solid #BCBCBC";
+
+            // Aplica animación a cada imagen en orden
+            const images = dropdownContent.querySelectorAll('img');
+            images.forEach((img, index) => {
+                img.style.animationDelay = `${index * 0.1}s`; // Añade un retraso acumulativo
+                img.classList.add('image-fade-in');
+            });
+        } else {
+            const isLastDropdown = exhibitionDropdown === container.lastElementChild;
+            if (!isLastDropdown) {
+
+                dropdownTitleContaniner.style.borderBottom = "none";
+            }
+            // Reinicia las animaciones al cerrar
+            const images = dropdownContent.querySelectorAll('img');
+            images.forEach((img) => {
+                img.classList.remove('image-fade-in');
+                img.style.animationDelay = ""; // Limpia el retraso
+            });
+        }
+
+        dropdownTitle.textContent = `${isOpen ? '+' : ''} ${title}`;
+    });
+
+    dropdownTitle.addEventListener('mouseover', () => {
+        if (!dropdownContent.classList.contains('dropdown-content-visible')) {
+            dropdownTitle.textContent = `+ ${title}`;
+        }
+    });
+
+    dropdownTitle.addEventListener('mouseout', () => {
+        if (!dropdownContent.classList.contains('dropdown-content-visible')) {
+            dropdownTitle.textContent = `${title}`;
+        }
+    });
+    dropdownTitle.classList.add("hover-effect");
+
+
+
+    exhibitionDropdown.appendChild(dropdownContent);
+    container.appendChild(exhibitionDropdown);
+}
+
 
 function createPressDropdown(container, title, pressItems) {
     const dropdown = document.createElement('div');
@@ -118,18 +271,20 @@ function createPressDropdown(container, title, pressItems) {
         const pressItem = document.createElement('div');
         pressItem.classList.add('press-item');
 
-        const link = document.createElement('a');
-        link.href = item.link;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
+        var link;
+        if (item.link != "") {
+            link = document.createElement('a');
+            link.href = item.link;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+        } else {
+            var link = document.createElement('span');
+        }
         link.textContent = item.text;
 
-        const date = document.createElement('p');
-        date.classList.add('press-date');
-        date.textContent = item.date;
+
 
         pressItem.appendChild(link);
-        pressItem.appendChild(date);
         dropdownContent.appendChild(pressItem);
     });
     dropdownTitle.addEventListener('click', () => {
@@ -137,6 +292,7 @@ function createPressDropdown(container, title, pressItems) {
 
         dropdownTitle.textContent = `${isOpen ? '+' : ''} ${title}`;
     });
+
 
     dropdownTitle.addEventListener('mouseover', () => {
         if (!dropdownContent.classList.contains('dropdown-content-visible')) {
@@ -163,6 +319,7 @@ function createPressDropdown(container, title, pressItems) {
 }
 
 function createDropdown(container, title, images, startIndex) {
+
 
 
     const dropdown = document.createElement('div');
@@ -204,8 +361,8 @@ function createDropdown(container, title, images, startIndex) {
         img.src = images[currentIndex].url || images[currentIndex];
         img.alt = images[currentIndex].name || title;
 
+        // A partir de aqui
         if (title === "Exhibition") {
-            console.log(images);
             infoImagesContainer.innerHTML = `<div id="gallery-top-info"><p id="gallery-name">${images[currentIndex].name}<br> ${images[currentIndex].exhibitionDate}<br> ${images[currentIndex].exhibitionLocation}</p></div>
             <div id="gallery-bottom-info"><p id="gallery-info1">${images[currentIndex].curator}</p><p id="gallery-info2">${images[currentIndex].assistant}</p></div>
               `;
@@ -277,7 +434,7 @@ function createDropdown(container, title, images, startIndex) {
                 exhibitionInfo.classList.add('exhibition-info');
                 exhibitionInfo.style.position = "absolute";
                 const exhibitionData = galleryData[startIndex];
-
+                //SE PONE LA INFO DE LA EXHIBICION
                 exhibitionInfo.innerHTML = `
                 <span style="display:inline-block;margin-right:24px;">${exhibitionData.name}</span>
                 <span>${exhibitionData.exhibitionLocation},</span>
@@ -312,13 +469,36 @@ function createDropdown(container, title, images, startIndex) {
     navigationContainer.appendChild(leftArea);
     navigationContainer.appendChild(rightArea);
 
-
     dropdownTitle.addEventListener('click', () => {
         const isOpen = dropdownContent.classList.toggle('dropdown-content-visible');
-        navigationContainer.style.display = isOpen && window.innerWidth <= 700 ? 'flex' : 'none';
+
+        if (isOpen) {
+            dropdownTitleContaniner.style.borderBottom = "1px solid #BCBCBC";
+
+            // Aplica animación a cada imagen en orden
+            const images = dropdownContent.querySelectorAll('img');
+            images.forEach((img, index) => {
+                img.style.animationDelay = `${index * 0.1}s`; // Añade un retraso acumulativo
+                img.classList.add('image-fade-in');
+            });
+        } else {
+            const isLastDropdown = dropdown === container.lastElementChild;
+            if (!isLastDropdown) {
+
+                dropdownTitleContaniner.style.borderBottom = "none";
+            }
+
+            // Reinicia las animaciones al cerrar
+            const images = dropdownContent.querySelectorAll('img');
+            images.forEach((img) => {
+                img.classList.remove('image-fade-in');
+                img.style.animationDelay = ""; // Limpia el retraso
+            });
+        }
 
         dropdownTitle.textContent = `${isOpen ? '+' : ''} ${title}`;
     });
+
 
     dropdownTitle.addEventListener('mouseover', () => {
         if (!dropdownContent.classList.contains('dropdown-content-visible')) {
@@ -354,7 +534,6 @@ function createDropdown(container, title, images, startIndex) {
     window.addEventListener('resize', adjustDropdownView);
 }
 
-
 function openGallery(startIndex) {
     if (window.innerWidth <= 700) {
         console.log("Galería no disponible en versión móvil.");
@@ -374,7 +553,6 @@ function openGallery(startIndex) {
     const back = document.getElementById("back-to-project");
     back.addEventListener("click", closeGallery);
     updateGallery();
-
 }
 
 
@@ -394,7 +572,7 @@ function updateGallery() {
 
     galleryImage.src = currentData.url;
 
-    document.getElementById('gallery-name').textContent = currentData.name;
+    document.getElementById('gallery-name').textContent = currentData.name + ",";
 
     if (currentData.exhibitionDate) {
         document.getElementById('gallery-date').textContent = currentData.exhibitionLocation + ", " + currentData.exhibitionDate;
@@ -414,6 +592,8 @@ function updateGallery() {
     }
 }
 
+
+
 function closeGallery() {
     const gallery = document.getElementById('gallery');
     const otherContent = document.querySelectorAll('#content > :not(#gallery)');
@@ -423,6 +603,7 @@ function closeGallery() {
     gallery.style.display = 'none';
     currentImageIndex = -1;
 }
+
 
 
 document.getElementById('gallery').addEventListener('click', (event) => {

@@ -80,7 +80,7 @@ function updateDisplay() {
             imgElement.classList.add('loaded'); // Añade una clase para la transición
 
             numbering.textContent = String(currentIndex + 1).padStart(3, '0');
-            info.textContent = `${currentImage.name} (${currentImage.date})`;
+            info.textContent = `${currentImage.name}, ${currentImage.date}`;
         };
     }
 }
