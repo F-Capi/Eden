@@ -64,7 +64,8 @@
             "date":"2023",
             "size":"33 1/2\" x 26 3/4\" (85 cm x 68 cm)",
             "color":"Testosterone, Chromogenic print scan, Archival pigment print",
-            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/pt5ssdf94izgtmhlvjfz"
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/pt5ssdf94izgtmhlvjfz",
+            "breakLine": true
         }  ,
         {
             "name":"Testosterone on Paper #3",
@@ -113,7 +114,8 @@
             "date":"2023",
             "size":"23 1/2\" x 15 1/2\" (60 cm x 40 cm)",
             "color":" Analog color photography, Archival pigment print",
-            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/cfmjsyipm8i7domhid7o"
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/cfmjsyipm8i7domhid7o",
+            "breakLine": true
         }  ,
         {
             "name":"Royo #2",
@@ -141,6 +143,11 @@
         ]
        }],
        "press": [
+        {
+            "link": "https://unhingedprint.com/the-fluid-world-of-eden-zornitser",
+            "text": "The Fluid World of Eden Zornitser, UNHiNGED Print, Tel Aviv, IL",
+            "date": "2024"
+        },
         {
             "link": "https://www.prtfl.co.il/archives/197449",
             "text": "\"What's Up? Eden Zornitzer\", Portfolio Magazine, Tel Aviv, IL",

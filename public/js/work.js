@@ -1,3 +1,16 @@
+async function preloadImages(images) {
+    const promises = images.map(img => {
+        return new Promise((resolve, reject) => {
+            const image = new Image();
+            image.src = img.url;
+
+            image.onload = () => resolve(img); // Resuelve cuando se carga
+            image.onerror = () => reject(new Error(`Failed to load image: ${img.url}`));
+        });
+    });
+    return Promise.all(promises); // Espera que todas las imágenes se pre-carguen
+}
+
 async function loadProjects() {
     const contentDiv = document.querySelector('#projects');
     const scrollToTopButton = document.getElementById('backToTop');
@@ -12,12 +25,13 @@ async function loadProjects() {
 
     try {
         const response = await fetch('/api/work');
-
-        if (!response.ok) {
-            throw new Error('Error loading Projects');
-        }
+        if (!response.ok) throw new Error('Error loading Projects');
 
         const projects = await response.json();
+
+        // Pre-cargar todas las imágenes de los proyectos
+        const allImages = projects.flatMap(project => project.imgs);
+        await preloadImages(allImages);
 
         contentDiv.innerHTML = '';
 
@@ -34,9 +48,7 @@ async function loadProjects() {
             span.innerHTML = project.year;
             span.classList.add("work-project-year");
 
-            projectInfo.innerHTML = `
-            <a class="work-project-title" href="/project/${project.id}">${project.name}</a><p class="work-project-plus">+</p>
-           `;
+            projectInfo.innerHTML = `<a class="work-project-title" href="/project/${project.id}">${project.name}</a><p class="work-project-plus">+</p>`;
             projectInfo.appendChild(span);
 
             const hiddenDetails = document.createElement("span");
@@ -48,16 +60,17 @@ async function loadProjects() {
             const images = document.createElement("div");
             images.classList.add("work-project-images");
 
-            project.imgs.forEach((img, index) => {
+            project.imgs.forEach(img => {
                 const di = document.createElement("div");
                 di.classList.add("work-project-image-container");
 
                 const a = document.createElement("a");
                 a.href = `/project/${project.id}`;
+
                 const i = document.createElement("img");
+                i.src = img.url; // Ya se pre-cargó
                 a.appendChild(i);
                 di.appendChild(a);
-                i.src = img.url;
 
                 if (img.crop) {
                     di.classList.add("work-image-crop");
@@ -71,10 +84,6 @@ async function loadProjects() {
                 if (img.width) {
                     i.style.width = img.width;
                 }
-
-                // Agrega la clase de animación y el retraso
-                i.classList.add('image-fade-in');
-                i.style.animationDelay = `${index * 0.1}s`;
 
                 images.appendChild(di);
             });

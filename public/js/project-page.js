@@ -66,7 +66,6 @@ async function loadProjectDetails() {
 function createExhibitionDropdown(container, title, exhibitions) {
     const exhibitionDropdown = document.createElement('div');
     exhibitionDropdown.classList.add('dropdown-container');
-
     const dropdownTitleContaniner = document.createElement('div');
     dropdownTitleContaniner.classList.add('dropdownTitleContaniner');
 
@@ -81,6 +80,7 @@ function createExhibitionDropdown(container, title, exhibitions) {
     dropdownContent.classList.add('dropdown-content');
     dropdownContent.style.paddingTop = "16px";
     dropdownContent.style.paddingBottom = "0px";
+    dropdownContent.style.flexDirection = "column";
     exhibitions.forEach((exhibition, groupIndex) => {
         const exhibitionGroup = document.createElement('div');
         exhibitionGroup.classList.add('exhibition-group');
@@ -88,10 +88,7 @@ function createExhibitionDropdown(container, title, exhibitions) {
         const exhibitionInfo = document.createElement('div');
         exhibitionInfo.classList.add('exhibition-info');
         exhibitionInfo.innerHTML = `
-            <p class="exhibition-date">${exhibition.date}</p><p class="exhibition-details">+ ${exhibition.location}</p>
-            <p class="exhibition-curator">Curated by ${exhibition.curator}</p>
-            ${exhibition.assistant ? `<p class="exhibition-assistant">Assistant: ${exhibition.assistant}</p>` : ''}
-        `;
+            <p class="exhibition-date">${exhibition.date}</p><p class="exhibition-details">${exhibition.location}</p>`;
 
         const exhibitionImagesContainer = document.createElement('div');
         exhibitionImagesContainer.classList.add('exhibition-images');
@@ -265,6 +262,8 @@ function createPressDropdown(container, title, pressItems) {
     dropdownArrow.classList.add("arrow");
 
     const dropdownContent = document.createElement('div');
+
+    dropdownContent.style.flexDirection = "column";
     dropdownContent.classList.add('dropdown-content');
     dropdownContent.classList.add("press");
     pressItems.forEach(item => {
@@ -447,6 +446,12 @@ function createDropdown(container, title, images, startIndex) {
                 img.src = image.url || image;
                 img.alt = image.name || title;
 
+                if (image.breakLine) {
+                    const saltoLinea = document.createElement('div');
+                    saltoLinea.classList.add('salto-linea');
+                    dropdownContent.appendChild(saltoLinea);
+                }
+
                 if (title === "Exhibition") {
                     img.classList.add('exhibition-image');
 
@@ -572,13 +577,27 @@ function updateGallery() {
 
     galleryImage.src = currentData.url;
 
-    document.getElementById('gallery-name').textContent = currentData.name + ",";
-
+    const infoTop = document.getElementById("gallery-info-top");
+    const galleryName = document.getElementById('gallery-name');
     if (currentData.exhibitionDate) {
-        document.getElementById('gallery-date').textContent = currentData.exhibitionLocation + ", " + currentData.exhibitionDate;
+        infoTop.style.textDecoration = "none";
+        galleryName.style.textDecoration = "underline";
+        galleryName.textContent = currentData.name;
+        document.getElementById('gallery-date').textContent = currentData.exhibitionDate;
+        document.getElementById('gallery-date').classList.add("exhibition-gallery-date");
+        document.getElementById('gallery-info0').textContent = currentData.exhibitionLocation;
         document.getElementById('gallery-info1').textContent = currentData.curator;
         document.getElementById('gallery-info2').textContent = currentData.assistant;
     } else {
+        document.getElementById('gallery-info0').textContent = "";
+
+        infoTop.style.textDecoration = "underline";
+        galleryName.style.textDecoration = "none";
+        document.getElementById('gallery-name').textContent = currentData.name + ",";
+        if (document.getElementById('gallery-date').classList.contains("exhibition-gallery-date")) {
+            document.getElementById('gallery-date').classList.remove("exhibition-gallery-date");
+
+        }
         if (currentData.date) {
             document.getElementById('gallery-date').textContent = currentData.date;
         }
