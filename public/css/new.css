@@ -181,9 +181,9 @@ footer .footer-section:nth-of-type(4) {
 .work-project-year{
     position: absolute;
     display: block;
-    bottom: 0;
-    right: 0;
-    font-size: 12px; 
+    bottom: 2px;
+    left: 22.9px;
+    font-size: 9px; 
     font-family: 'OCRAStd';
 }
 /* Animación de opacidad */
@@ -228,7 +228,8 @@ line-height: 125%;
     background: #F4FF61;
 }
 .work-project-title:hover ~ .work-project-year {
-    background: #F4FF61; 
+    background: #F4FF61;
+    display: none;
 }
 
 .work-project-title:hover ~ .hiddenDetails {
@@ -657,6 +658,7 @@ user-select: none;
     margin: 0;
     height: fit-content;
     width: fit-content;
+    user-select: none;
 }
 
 
@@ -713,6 +715,9 @@ font-size: 8px;
     font-size: 24px;
     text-align: center;
 }
+#about-description::selection{
+    background: #C1BAFF;
+}
 
 #about-float-description{
  /* 14.04px */
@@ -737,6 +742,7 @@ background-color: #F4FF61;
     overflow: hidden;
     justify-content: center;
     align-items: center;
+    cursor: none;
 }
 
 #home-image-container img {
@@ -766,6 +772,29 @@ background-color: #F4FF61;
     min-height: 300px;
 }
 
+
+.ex-m-name{
+    text-decoration: underline;
+    margin-bottom: 7px;
+}
+
+.ex-m-name, .ex-m-date{
+    font-family: "OCRAStd";
+    font-size: 12px;
+    font-style: normal;
+        text-transform: uppercase;
+        margin-left: 24.82px;
+}
+.ex-m-date{
+    margin-bottom: 20px;
+}
+.ex-m-location, .ex-m-curator, .ex-m-assistant{
+    margin-left: 24.82px;
+    margin-bottom: 3px;
+}
+.ex-m-location, .ex-m-curator{
+    margin-bottom: 1px;
+}
 @media (max-width: 700px) {
     #about-container{
         height: auto;
@@ -909,6 +938,7 @@ background-color: #F4FF61;
     }
     
     .work-project-title {      
+        line-height: 1;
         position: static;
         font-size: 24px;
     }
@@ -1014,4 +1044,8 @@ margin-bottom: 24px;
         padding-left: 16px;
         margin-bottom: 0;
       }
+      .work-project-title:hover ~ .work-project-year {
+
+        display: block;
+    }
 }

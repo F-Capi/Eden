@@ -33,6 +33,7 @@ async function loadImages() {
     }
 }
 
+
 async function preloadInitialImages(count) {
     const promises = images.slice(0, count).map((image) => preloadImage(image.url));
     await Promise.all(promises);
@@ -121,6 +122,39 @@ function handleResponsiveNavigation() {
         navigateTo('work');
     }
 }
+
+document.getElementById('home-image-container').addEventListener('mousemove', (event) => {
+    const cursor = document.getElementById('custom-cursor');
+    const galleryImage = document.getElementById('home-img');
+    const rect = galleryImage.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+
+
+    // Mostrar el cursor dinámico y ocultar el cursor predeterminado
+    cursor.style.display = 'block';
+    cursor.style.left = `${event.pageX}px`;
+    cursor.style.top = `${event.pageY}px`;
+
+    if (event.clientX < centerX) {
+        cursor.textContent = 'prev';
+    } else {
+        cursor.textContent = 'next';
+    }
+
+});
+
+
+document.getElementById('home-image-container').addEventListener('mouseleave', () => {
+    const cursor = document.getElementById('custom-cursor');
+    cursor.style.display = 'none'; // Ocultar el cursor dinámico
+});
+
+document.getElementById('home-image-container').addEventListener('mouseenter', () => {
+    const cursor = document.getElementById('custom-cursor');
+    cursor.style.display = 'block'; // Mostrar el cursor dinámico
+});
+
+
 
 window.addEventListener('resize', handleResponsiveNavigation);
 handleResponsiveNavigation();

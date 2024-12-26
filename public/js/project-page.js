@@ -162,8 +162,18 @@ function createExhibitionDropdown(container, title, exhibitions) {
             if (window.innerWidth <= 700) {
                 navigationContainer.style.display = 'flex';
                 numberDisplay.style.display = 'block';
+                exhibitionInfo.innerHTML = `<p class="ex-m-name">${exhibition.name}</p><p class="ex-m-date">${exhibition.date}</p><p class="ex-m-location">${exhibition.location}</p>`;
+                if (exhibition.curator) {
+                    exhibitionInfo.innerHTML += `<p class="ex-m-curator" >Curator: ${exhibition.curator.substring(10)}</p>`;
+                }
+                if (exhibition.assistant) {
+                    exhibitionInfo.innerHTML += `<p class="ex-m-assistant" >Assistant: ${exhibition.assistant.substring(19)}</p>`;
+
+                }
                 updateImage();
             } else {
+                exhibitionInfo.innerHTML = `
+                <p class="exhibition-date">${exhibition.date}</p><p class="exhibition-details">${exhibition.location}</p>`;
                 exhibitionImagesContainer.innerHTML = '';
                 numberDisplay.style.display = 'none';
                 exhibition.photography.forEach((url) => {
@@ -379,7 +389,7 @@ function createDropdown(container, title, images, startIndex) {
             dropdownContent.appendChild(num);
         } else {
 
-            infoImagesContainer.innerHTML = `<div id="gallery-top-info"><p id="gallery-name">${images[currentIndex].name} ${images[currentIndex].date}</p></div>
+            infoImagesContainer.innerHTML = `<div id="gallery-top-info"><p id="gallery-name">${images[currentIndex].name}, ${images[currentIndex].date}</p></div>
           <div id="gallery-bottom-info"><p id="gallery-info1">${images[currentIndex].size}</p><p id="gallery-info2">${images[currentIndex].color}</p></div>
             `;
             img.classList.add('dropdown-image');
