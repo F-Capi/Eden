@@ -15,14 +15,16 @@
             "date":"Tel Aviv, 2023",
             "size":"25 1/2\" x 20 1/2\" (65 cm x 52 cm)",
             "color":"Analog color photography, Archival pigment print",
-            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/sukovaxybzsyqnc7spsn"
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/sukovaxybzsyqnc7spsn",
+            "purchase": "https://edrcenter.com/work/%d7%93%d7%a0%d7%99%d7%90%d7%9c-%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91/"
         } , 
         {
             "name":"Koi",
             "date":"London, 2023",
             "size":"25 1/2\" x 20 1/2\" (65 cm x 52 cm)",
             "color":"Analog color photography, Archival pigment print",
-            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gawhexuiwryhchwratvx"
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gawhexuiwryhchwratvx",
+            "purchase": "https://edrcenter.com/work/%d7%a7%d7%95%d7%99-%d7%9c%d7%95%d7%a0%d7%93%d7%95%d7%9f/"
         }  ,
         {
             "name":"Royo",
@@ -100,7 +102,8 @@
             "date":"2024",
             "size":"25 1/2\" x 20 1/2\" (65 cm x 52 cm)",
             "color":"Testosterone, Chromogenic print scan, Archival pigment print",
-            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/kaeqt6gukw89iicz47zi"
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/kaeqt6gukw89iicz47zi",
+            "purchase": "https://edrcenter.com/work/%d7%98%d7%a1%d7%98%d7%95%d7%a1%d7%98%d7%a8%d7%95%d7%9f-%d7%a2%d7%9c-%d7%a0%d7%99%d7%99%d7%a8-10/"
         } ,
         {
             "name":"Testosterone on Paper #6",
@@ -115,7 +118,8 @@
             "size":"23 1/2\" x 15 1/2\" (60 cm x 40 cm)",
             "color":" Analog color photography, Archival pigment print",
             "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/cfmjsyipm8i7domhid7o",
-            "breakLine": true
+            "breakLine": true,
+            "purchase": "https://edrcenter.com/work/%d7%a8%d7%95%d7%99%d7%95/"
         }  ,
         {
             "name":"Royo #2",

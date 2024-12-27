@@ -43,7 +43,8 @@ async function loadProjectDetails() {
                     name: photo.name,
                     size: photo.size,
                     date: photo.date,
-                    color: photo.color
+                    color: photo.color,
+                    purchase: photo.purchase
                 });
             });
             createDropdown(dropdownContainer, 'Photography', data.photography, galleryData.length - data.photography.length);
@@ -389,9 +390,19 @@ function createDropdown(container, title, images, startIndex) {
             dropdownContent.appendChild(num);
         } else {
 
-            infoImagesContainer.innerHTML = `<div id="gallery-top-info"><p id="gallery-name">${images[currentIndex].name}, ${images[currentIndex].date}</p></div>
-          <div id="gallery-bottom-info"><p id="gallery-info1">${images[currentIndex].size}</p><p id="gallery-info2">${images[currentIndex].color}</p></div>
+            infoImagesContainer.innerHTML = `
+            <div id="gallery-top-info">
+                <p id="gallery-name">${images[currentIndex].name}, ${images[currentIndex].date}</p>
+            </div>`
+
+            infoImagesContainer.innerHTML +=
+                `<div id="gallery-bottom-info">
+                    <p id="gallery-info1">${images[currentIndex].size}</p>
+                <p id="gallery-info2">${images[currentIndex].color}</p>
+            </div>
             `;
+
+
             img.classList.add('dropdown-image');
 
             const num = document.createElement("p");
@@ -400,6 +411,14 @@ function createDropdown(container, title, images, startIndex) {
 
 
             dropdownContent.appendChild(infoImagesContainer);
+            if (images[currentIndex].purchase) {
+                const pur = document.createElement("p");
+                pur.id = "purchase-link-mobile";
+                pur.innerHTML = `You can Purchase this print <a href="${images[currentIndex].purchase}">here</a>`
+                dropdownContent.appendChild(pur);
+                console.log(images[currentIndex].purchase);
+            }
+
             d.appendChild(img);
             dropdownContent.appendChild(d);
             dropdownContent.appendChild(navigationContainer);
@@ -589,6 +608,12 @@ function updateGallery() {
 
     const infoTop = document.getElementById("gallery-info-top");
     const galleryName = document.getElementById('gallery-name');
+    if (currentData.purchase) {
+        document.getElementById("purchase-link").style.display = "block";
+        document.querySelector("#purchase-link a").href = currentData.purchase;
+    } else {
+        document.getElementById("purchase-link").style.display = "none";
+    }
     if (currentData.exhibitionDate) {
         infoTop.style.textDecoration = "none";
         galleryName.style.textDecoration = "underline";
@@ -640,18 +665,26 @@ document.getElementById('gallery').addEventListener('click', (event) => {
     const rect = galleryImage.getBoundingClientRect(); // Obtener las dimensiones de la imagen
     const centerX = rect.left + rect.width / 2; // Calcular el centro de la imagen
     const clickX = event.clientX;
+    const purchase = document.querySelector('#purchase-link a');
+    const purchaseRect = purchase.getBoundingClientRect();
+    const isHoveringPurchase = event.clientX >= purchaseRect.left &&
+        event.clientX <= purchaseRect.right &&
+        event.clientY >= purchaseRect.top &&
+        event.clientY <= purchaseRect.bottom;
+    if (!isHoveringPurchase) {
 
-    if (clickX < centerX) {
-        // Mover hacia atrás
-        if (currentImageIndex > 0) {
-            currentImageIndex--;
-            updateGallery();
-        }
-    } else {
-        // Mover hacia adelante
-        if (currentImageIndex < galleryData.length - 1) {
-            currentImageIndex++;
-            updateGallery();
+        if (clickX < centerX) {
+            // Mover hacia atrás
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+                updateGallery();
+            }
+        } else {
+            // Mover hacia adelante
+            if (currentImageIndex < galleryData.length - 1) {
+                currentImageIndex++;
+                updateGallery();
+            }
         }
     }
 });
@@ -665,13 +698,22 @@ document.getElementById('gallery').addEventListener('mousemove', (event) => {
 
     // Verificar si el ratón está sobre el botón
     const backButtonRect = backButton.getBoundingClientRect();
+
+    const purchase = document.querySelector('#purchase-link a');
+    const purchaseRect = purchase.getBoundingClientRect();
+    const isHoveringPurchase = event.clientX >= purchaseRect.left &&
+        event.clientX <= purchaseRect.right &&
+        event.clientY >= purchaseRect.top &&
+        event.clientY <= purchaseRect.bottom;
+
     const isHoveringBackButton =
         event.clientX >= backButtonRect.left &&
         event.clientX <= backButtonRect.right &&
         event.clientY >= backButtonRect.top &&
         event.clientY <= backButtonRect.bottom;
 
-    if (isHoveringBackButton) {
+
+    if (isHoveringBackButton || isHoveringPurchase) {
         // Mostrar el cursor normal y ocultar el texto dinámico
         cursor.style.display = 'none';
         backButton.style.cursor = 'pointer';
