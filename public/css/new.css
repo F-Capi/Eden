@@ -821,7 +821,36 @@ background-color: #F4FF61;
 .ex-m-location, .ex-m-curator{
     margin-bottom: 1px;
 }
+
+#featured-project{
+    background: #F4FF61;
+    font-family: 'OCRAStd';
+    font-size: 12px;
+    line-height: 19.2px;
+    text-align: left;
+    width: 364px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    cursor: pointer;
+}
+#featured-project:hover{
+    color: white;
+}
+#featured-project-container{
+    width: fit-content;
+    
+}
+#featured-project-container:hover{
+    color: white;
+}
+#featured-project-container{
+    text-decoration: underline;
+}
 @media (max-width: 700px) {
+    #featured-project{
+        width: 282.53px;
+    }
     #gallery-name{
         text-decoration: underline;
     }

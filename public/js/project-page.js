@@ -33,6 +33,24 @@ async function loadProjectDetails() {
 
         document.getElementById('project-title').textContent = data.name;
         document.getElementById('project-description').innerHTML = data.description;
+        const feature = document.getElementById("featured-project");
+        const featureContainer = document.getElementById("featured-project-container");
+        if ("feature" in data) {
+            featureContainer.style.display = "block";
+            feature.style.display = "block";
+            feature.textContent = data.feature;
+            document.getElementById("dropdowns").style.marginTop = "28px";
+            feature.href = data.featurelink;
+            let curatorContainer = document.querySelector(".curator-container");
+            if (curatorContainer) {
+                feature.style.marginTop = "22px";
+            }
+        } else {
+
+            featureContainer.style.display = "none";
+            feature.style.display = "none";
+
+        }
 
         const dropdownContainer = document.getElementById('dropdowns');
 
