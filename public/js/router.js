@@ -9,7 +9,6 @@ const toggleNumberingAndInfo = (show) => {
 
 const loadPage = async (page, projectTitle = '') => {
 
-
     if ((page === 'home' || page === '') && window.matchMedia('(max-width: 700px)').matches) {
         page = 'work';
     }
@@ -58,9 +57,6 @@ const loadPage = async (page, projectTitle = '') => {
             resetLinksBackgrounds();
             document.getElementById("index").classList.add("active-link");
             contentDiv.innerHTML = await fetch('/partials/projectPage.html').then(res => res.text());
-            if (window.getSelection) {
-                window.getSelection().removeAllRanges();
-            }
             await loadScript('/js/project-page.js');
             break;
         default:
