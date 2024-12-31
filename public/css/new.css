@@ -53,6 +53,7 @@ html, body {
     }
 
     #content{
+        user-select: none;
         width: 100%;
         margin-top: 60.12px;
     }
