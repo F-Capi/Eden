@@ -45,6 +45,9 @@ async function loadProjectDetails() {
             if (curatorContainer) {
                 feature.style.marginTop = "22px";
             }
+            if (data.longer) {
+                feature.style.width = "377px";
+            }
         } else {
 
             featureContainer.style.display = "none";

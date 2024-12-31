@@ -741,9 +741,7 @@ text-decoration: underline;
     font-size: 24px;
     text-align: center;
 }
-*::selection{
-    background: #C1BAFF;
-}
+
 
 #about-float-description{
  /* 14.04px */
