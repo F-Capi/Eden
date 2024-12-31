@@ -20,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'public'), {
         } else if (filePath.endsWith('.otf')) {
             res.setHeader('Content-Type', 'font/otf');
         }
+        res.setHeader('Cache-Control', 'public, max-age=31536000'); // Caching
     }
 }));
 

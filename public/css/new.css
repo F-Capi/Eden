@@ -1,9 +1,9 @@
 
 @font-face {
     font-family: 'ABCMonumentGrotesk';
-    src: url('/fonts/ABCMonumentGrotesk-Regular-Trial.woff2?v=1') format('woff2'),
-    url('/fonts/ABCMonumentGrotesk-Regular-Trial.woff?v=1') format('woff'),
-    url('/fonts/ABCMonumentGrotesk-Regular-Trial.otf?v=1') format('opentype');
+    src: url('/fonts/ABCMonumentGrotesk-Regular-Trial.woff2?v=2') format('woff2'),
+    url('/fonts/ABCMonumentGrotesk-Regular-Trial.woff?v=2') format('woff'),
+    url('/fonts/ABCMonumentGrotesk-Regular-Trial.otf?v=2') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
