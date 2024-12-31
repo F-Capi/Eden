@@ -37,6 +37,7 @@ const loadPage = async (page, projectTitle = '') => {
     }
     toggleNumberingAndInfo(page === 'home');
 
+
     switch (page) {
         case 'home':
             contentDiv.innerHTML = await fetch('/partials/home.html').then(res => res.text());
@@ -62,7 +63,9 @@ const loadPage = async (page, projectTitle = '') => {
         default:
             contentDiv.innerHTML = "<h1>404 - Página no encontrada</h1>";
     }
-
+    if (window.getSelection) {
+        window.getSelection().removeAllRanges();
+    }
     contentDiv.classList.remove('fade-out');
     contentDiv.classList.add('fade-in');
 

@@ -36,8 +36,6 @@ html, body {
     background-color: #F7F7F7;
 
       }
-  
-  
       .main-container {
         overflow: hidden;
         z-index: 0;
@@ -157,6 +155,7 @@ footer .footer-section:nth-of-type(4) {
     overflow-y: scroll;
     -ms-overflow-style: none; /* IE y Edge */
     scrollbar-width: none; /* Firefox */
+    user-select: none;
 }
 #projects::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Edge */
