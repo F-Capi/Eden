@@ -788,6 +788,7 @@ background-color: #F4FF61;
     .homepage-numbering,
     .homepage-info {
         display: none;
+        user-select: none;
     }
     
     

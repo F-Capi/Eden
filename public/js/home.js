@@ -102,10 +102,11 @@ function showNextImage() {
 
 function setupClickEvents() {
     const homeImageContainer = document.getElementById('home-image-container');
-    if (window.getSelection) {
-        window.getSelection().removeAllRanges();
-    }
+
     homeImageContainer.addEventListener('click', (event) => {
+        if (window.getSelection) {
+            window.getSelection().removeAllRanges();
+        }
         event.preventDefault();
         const rect = homeImageContainer.getBoundingClientRect();
         const clickX = event.clientX - rect.left;
