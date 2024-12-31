@@ -8,6 +8,9 @@ const toggleNumberingAndInfo = (show) => {
 };
 
 const loadPage = async (page, projectTitle = '') => {
+    if (window.getSelection) {
+        window.getSelection().removeAllRanges();
+    }
 
     if ((page === 'home' || page === '') && window.matchMedia('(max-width: 700px)').matches) {
         page = 'work';
