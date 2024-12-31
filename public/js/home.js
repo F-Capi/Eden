@@ -104,6 +104,7 @@ function setupClickEvents() {
     const homeImageContainer = document.getElementById('home-image-container');
 
     homeImageContainer.addEventListener('click', (event) => {
+        event.preventDefault();
         const rect = homeImageContainer.getBoundingClientRect();
         const clickX = event.clientX - rect.left;
 
