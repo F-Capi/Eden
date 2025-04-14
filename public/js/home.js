@@ -20,13 +20,10 @@ async function loadImages() {
         images = await response.json();
         images = shuffleArray(images);
 
-        // Precarga las primeras imágenes necesarias para mostrar inmediatamente
         await preloadInitialImages(3);
 
-        // Muestra la primera imagen
         updateDisplay();
 
-        // Precarga las imágenes restantes en segundo plano
         preloadRemainingImages();
     } catch (error) {
         console.error('Error loading images:', error);
@@ -46,14 +43,14 @@ function preloadRemainingImages() {
 function preloadImage(url) {
     return new Promise((resolve) => {
         if (preloadedImages[url]) {
-            resolve(); // Ya está precargada
+            resolve();
             return;
         }
 
         const img = new Image();
         img.src = url;
         img.onload = () => {
-            preloadedImages[url] = true; // Marcar como precargada
+            preloadedImages[url] = true;
             resolve();
         };
         img.onerror = () => {
@@ -72,13 +69,12 @@ function updateDisplay() {
         const currentImage = images[currentIndex];
         const imgElement = homeImageContainer.querySelector('img');
 
-        // Precargar la imagen actual antes de actualizar el src
         const tempImage = new Image();
         tempImage.src = currentImage.url;
 
         tempImage.onload = () => {
             imgElement.src = currentImage.url;
-            imgElement.classList.add('loaded'); // Añade una clase para la transición
+            imgElement.classList.add('loaded');
 
             numbering.textContent = String(currentIndex + 1).padStart(3, '0');
             info.textContent = `${currentImage.name}, ${currentImage.date}`;
@@ -134,7 +130,6 @@ document.getElementById('home-image-container').addEventListener('mousemove', (e
     const centerX = rect.left + rect.width / 2;
 
 
-    // Mostrar el cursor dinámico y ocultar el cursor predeterminado
     cursor.style.display = 'block';
     cursor.style.left = `${event.pageX}px`;
     cursor.style.top = `${event.pageY}px`;
@@ -150,12 +145,12 @@ document.getElementById('home-image-container').addEventListener('mousemove', (e
 
 document.getElementById('home-image-container').addEventListener('mouseleave', () => {
     const cursor = document.getElementById('custom-cursor');
-    cursor.style.display = 'none'; // Ocultar el cursor dinámico
+    cursor.style.display = 'none';
 });
 
 document.getElementById('home-image-container').addEventListener('mouseenter', () => {
     const cursor = document.getElementById('custom-cursor');
-    cursor.style.display = 'block'; // Mostrar el cursor dinámico
+    cursor.style.display = 'block';
 });
 
 

@@ -4,11 +4,11 @@ async function preloadImages(images) {
             const image = new Image();
             image.src = img.url;
 
-            image.onload = () => resolve(img); // Resuelve cuando se carga
+            image.onload = () => resolve(img);
             image.onerror = () => reject(new Error(`Failed to load image: ${img.url}`));
         });
     });
-    return Promise.all(promises); // Espera que todas las imágenes se pre-carguen
+    return Promise.all(promises);
 }
 
 async function loadProjects() {
@@ -29,7 +29,6 @@ async function loadProjects() {
 
         const projects = await response.json();
 
-        // Pre-cargar todas las imágenes de los proyectos
         const allImages = projects.flatMap(project => project.imgs);
         await preloadImages(allImages);
 
@@ -68,7 +67,7 @@ async function loadProjects() {
                 a.href = `/project/${project.id}`;
 
                 const i = document.createElement("img");
-                i.src = img.url; // Ya se pre-cargó
+                i.src = img.url;
                 a.appendChild(i);
                 di.appendChild(a);
 

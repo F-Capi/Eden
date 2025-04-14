@@ -7,12 +7,12 @@ async function preloadImages(images) {
             const img = new Image();
             img.src = image.url;
 
-            img.onload = () => resolve(img); // Resuelve la promesa cuando la imagen se carga
+            img.onload = () => resolve(img);
             img.onerror = () => reject(new Error(`Failed to load image: ${image.url}`));
         });
     });
 
-    return Promise.all(promises); // Espera a que todas las imágenes se carguen
+    return Promise.all(promises);
 }
 
 
@@ -127,7 +127,6 @@ function createExhibitionDropdown(container, title, exhibitions) {
         const numberDisplay = document.createElement('p');
         numberDisplay.classList.add('gallery-number');
 
-        // Add all images to galleryData and keep track of their index
         exhibition.photography.forEach((url) => {
             galleryData.push({
                 url,
@@ -236,10 +235,9 @@ function createExhibitionDropdown(container, title, exhibitions) {
         if (isOpen) {
             dropdownTitleContaniner.style.borderBottom = "1px solid #BCBCBC";
 
-            // Aplica animación a cada imagen en orden
             const images = dropdownContent.querySelectorAll('img');
             images.forEach((img, index) => {
-                img.style.animationDelay = `${index * 0.1}s`; // Añade un retraso acumulativo
+                img.style.animationDelay = `${index * 0.1}s`;
                 img.classList.add('image-fade-in');
             });
         } else {
@@ -248,11 +246,10 @@ function createExhibitionDropdown(container, title, exhibitions) {
 
                 dropdownTitleContaniner.style.borderBottom = "none";
             }
-            // Reinicia las animaciones al cerrar
             const images = dropdownContent.querySelectorAll('img');
             images.forEach((img) => {
                 img.classList.remove('image-fade-in');
-                img.style.animationDelay = ""; // Limpia el retraso
+                img.style.animationDelay = "";
             });
         }
 
@@ -483,7 +480,7 @@ function createDropdown(container, title, images, startIndex) {
                 exhibitionInfo.classList.add('exhibition-info');
                 exhibitionInfo.style.position = "absolute";
                 const exhibitionData = galleryData[startIndex];
-                //SE PONE LA INFO DE LA EXHIBICION
+                // PONE LA INFO DE LA EXHIBICION
                 exhibitionInfo.innerHTML = `
                 <span style="display:inline-block;margin-right:24px;">${exhibitionData.name}</span>
                 <span>${exhibitionData.exhibitionLocation},</span>
@@ -530,7 +527,6 @@ function createDropdown(container, title, images, startIndex) {
         if (isOpen) {
             dropdownTitleContaniner.style.borderBottom = "1px solid #BCBCBC";
 
-            // Aplica animación a cada imagen en orden
             const images = dropdownContent.querySelectorAll('img');
             images.forEach((img, index) => {
                 img.style.animationDelay = `${index * 0.1}s`; // Añade un retraso acumulativo
@@ -547,7 +543,7 @@ function createDropdown(container, title, images, startIndex) {
             const images = dropdownContent.querySelectorAll('img');
             images.forEach((img) => {
                 img.classList.remove('image-fade-in');
-                img.style.animationDelay = ""; // Limpia el retraso
+                img.style.animationDelay = "";
             });
         }
 
@@ -683,8 +679,8 @@ function closeGallery() {
 
 document.getElementById('gallery').addEventListener('click', (event) => {
     const galleryImage = document.getElementById('gallery-image');
-    const rect = galleryImage.getBoundingClientRect(); // Obtener las dimensiones de la imagen
-    const centerX = rect.left + rect.width / 2; // Calcular el centro de la imagen
+    const rect = galleryImage.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
     const clickX = event.clientX;
     const purchase = document.querySelector('#purchase-link a');
     const purchaseRect = purchase.getBoundingClientRect();
@@ -717,7 +713,6 @@ document.getElementById('gallery').addEventListener('mousemove', (event) => {
     const rect = galleryImage.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
 
-    // Verificar si el ratón está sobre el botón
     const backButtonRect = backButton.getBoundingClientRect();
 
     const purchase = document.querySelector('#purchase-link a');
@@ -735,11 +730,9 @@ document.getElementById('gallery').addEventListener('mousemove', (event) => {
 
 
     if (isHoveringBackButton || isHoveringPurchase) {
-        // Mostrar el cursor normal y ocultar el texto dinámico
         cursor.style.display = 'none';
         backButton.style.cursor = 'pointer';
     } else {
-        // Mostrar el cursor dinámico y ocultar el cursor predeterminado
         cursor.style.display = 'block';
         cursor.style.left = `${event.pageX}px`;
         cursor.style.top = `${event.pageY}px`;
@@ -755,12 +748,12 @@ document.getElementById('gallery').addEventListener('mousemove', (event) => {
 
 document.getElementById('gallery').addEventListener('mouseleave', () => {
     const cursor = document.getElementById('custom-cursor');
-    cursor.style.display = 'none'; // Ocultar el cursor dinámico
+    cursor.style.display = 'none';
 });
 
 document.getElementById('gallery').addEventListener('mouseenter', () => {
     const cursor = document.getElementById('custom-cursor');
-    cursor.style.display = 'block'; // Mostrar el cursor dinámico
+    cursor.style.display = 'block';
 });
 
 
