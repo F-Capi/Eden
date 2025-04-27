@@ -307,5 +307,38 @@
         "size":"48 1/2\" x 39\" (123 cm x 98.5 cm)",
         "color":"Analog color photography, Archival pigment print",
         "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/ytg0q7z5lg3oeo9rmbl4"
-    } 
+    },
+    {
+        "name":"Nitzan",
+        "date":"2024",
+        "size":"31 1/2\" x 21\" (80 cm x 53 cm)",
+        "color":"Analog color photography, Archival pigment print",
+        "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/ano9liwpzq62uaktvkhi"
+    },
+    {
+        "name":"Mika",
+        "date":"2024",
+        "size":"31 1/2\" x 21\" (80 cm x 53 cm)",
+        "color":"Analog color photography, Archival pigment print",
+        "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gylwu1cnagjlu4sri2tx"
+    },
+    {
+        "name":"Guy",
+        "date":"2024",
+        "size":"31 1/2\" x 21\" (80 cm x 53 cm)",
+        "color":"Analog color photography, Archival pigment print",
+        "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gxbpl2xj8soshh14pukc"
+    },
+    {
+        "name": "Desktop",
+        "date": "3.4.2025 - 3.1.2026",
+        "location": "Haifa Museum of Art, Haifa, Israel",
+        "url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/sgti8tqeu4smenw9v6se"
+    },
+    {
+        "name": "Desktop",
+        "date": "3.4.2025 - 3.1.2026",
+        "location": "Haifa Museum of Art, Haifa, Israel",
+        "url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/esmnjdmywlgyhkqftjy1"
+    }
 ]

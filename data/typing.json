@@ -1,0 +1,76 @@
+{
+    "id":"typing",
+    "name": "typing...",
+    "description": "<p>“Eden Zornitser’s series of intimate portraits features queer individuals engaging with their mobile phones. By focusing on this everyday activity, Zornitser underscores how technology shapes the creation of virtual spaces that transcend social and geographical boundaries within queer culture. Technology plays a crucial role in fostering a sense of belonging and solidarity, alleviating the loneliness that arises from the experience of alienation in a conservative, heteronormative society.”</p><div class=\"curator-container\"><span>(By Yuval Saar, curator)</span></div>",
+    "photography": [
+        {
+            "name":"Mika",
+            "date":"2024",
+            "size":"31 1/2\" x 21\" (80 cm x 53 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gylwu1cnagjlu4sri2tx"
+        },
+        {
+            "name":"Guy",
+            "date":"2024",
+            "size":"31 1/2\" x 21\" (80 cm x 53 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gxbpl2xj8soshh14pukc"
+        },
+        {
+            "name":"Tulip",
+            "date":"2024",
+            "size":"31 1/2\" x 21\" (80 cm x 53 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/vgpxxssksjdfy40tommy"
+        },
+        {
+            "name":"Nitzan",
+            "date":"2024",
+            "size":"31 1/2\" x 21\" (80 cm x 53 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/ano9liwpzq62uaktvkhi"
+        },
+        {
+            "name":"Yona",
+            "date":"2024",
+            "size":"31 1/2\" x 21\" (80 cm x 53 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/uuohrra4vqjowu5jxr03"
+        },
+        {
+            "name":"Ellie Michellie",
+            "date":"2024",
+            "size":"31 1/2\" x 21\" (80 cm x 53 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/sh6hxvtnwfl5vutmzwoy"
+        },
+        {
+            "name":"Blaise",
+            "date":"2023",
+            "size":"31 1/2\" x 25\" (80 cm x 64 cm)",
+            "color":"Analog color photography, Archival pigment print",
+            "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/eqzhwq0ziqnlu4vfz27i"
+        }    
+    ],
+    "exhibitions": [{
+        "name": "Desktop",
+        "date": "3.4.2025 - 3.1.2026",
+        "location":"Haifa Museum of Art, Haifa, Israel",
+        "curator": "Curated by Yuval Saar",
+        "assistant": "Assistant Curator: Fadi Far",
+        "credit": "Elie Posner",
+        "photography": [
+"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/sgti8tqeu4smenw9v6se",
+"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/jwqtdtegsytovxo5rydt",
+"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/esmnjdmywlgyhkqftjy1"
+        ]
+       }],
+       "press": [
+        {
+            "link": "https://unhingedprint.com/the-fluid-world-of-eden-zornitser",
+            "text": "‘Desktop’ at Haifa Museum: Time Travel”, Portfolio Magazine, Tel Aviv, IL",
+            "date": "2025"
+        }
+    ]
+}

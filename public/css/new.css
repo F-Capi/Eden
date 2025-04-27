@@ -129,7 +129,6 @@ footer {
 .footer-section  * {
     
     font-family: 'OCRAStd' !important;
-   
     font-size: 10px;
 }
 
@@ -207,8 +206,8 @@ footer .footer-section:nth-of-type(4) {
     
 }
 .work-project-title span{
-    line-height: 1;
-    font-size: 24px;
+    line-height: 24px;
+        font-size: 24px;
 }
 
 .hiddenDetails{
@@ -567,12 +566,11 @@ text-decoration: underline;
 }
 
 .gallery-left{
-    width: 50%; /* Ocupa la mitad del ancho de la pantalla */
     height: 100%; /* Ocupa toda la altura de #gallery */
     display: flex;
-    justify-content: space-between; /* Centra la imagen horizontalmente */
     align-items: center; /* Centra la imagen verticalmente */
     overflow: hidden; /* Evita que la imagen desborde */
+    max-width: 50%;
 }
 /* Contenedor de la imagen */
 .gallery-image-container {
@@ -595,7 +593,7 @@ text-decoration: underline;
 
 /* Contenedor de la información */
 #gallery-info {
-    width: 50%; /* Ocupa la otra mitad del ancho de la pantalla */
+   flex: 1;
     height: 100%; /* Ocupa toda la altura de #gallery */
     display: flex;
     flex-direction: column; /* Alinear elementos verticalmente */
@@ -606,7 +604,6 @@ text-decoration: underline;
 }
 #gallery-info-top{
     padding-bottom: 13.09px;
-    padding-top: 11.2px;
     text-decoration-line: underline;
     font-family: "OCRAStd";
     font-size: 12px;
@@ -620,16 +617,14 @@ text-decoration: underline;
 #gallery-info-bottom{
     display: flex;
     flex-direction: column;
-    padding-bottom: 14.53px;
 }
 
 #gallery-number{
-padding-left: 25.5px;
-padding-right: 21.14px;    
+    text-align: center;
 color: #0C0C0C;
 font-family: "OCRAStd";
 font-size: 12px;
-
+min-width: 70.5px;
 user-select: none;
 }
 #gallery > * {
@@ -637,6 +632,8 @@ user-select: none;
 }
 
 #gallery-info-container{
+    padding-top: 13px;
+    padding-bottom: 13px;
     border-bottom: 1px solid #BCBCBC;
     border-top: 1px solid #BCBCBC;
     padding-left: 67.22px;
@@ -730,7 +727,7 @@ text-decoration: underline;
     font-size: 10px;
 }
 
-.about-contact-info:hover span{
+.about-contact-info:hover span:first-of-type{
     background-color: #F4FF61;
 } 
 #about-description{
@@ -794,6 +791,7 @@ background-color: #F4FF61;
     
 .fix-jump{
     min-height: 300px;
+    width: 100%;
 }
 
 
@@ -814,7 +812,6 @@ background-color: #F4FF61;
 }
 .ex-m-location, .ex-m-curator, .ex-m-assistant{
     margin-left: 24.82px;
-    margin-bottom: 3px;
 }
 .ex-m-location, .ex-m-curator{
     margin-bottom: 1px;
@@ -994,7 +991,7 @@ background-color: #F4FF61;
     }
     
     .work-project-title {      
-        line-height: 1;
+        line-height: 24px;
         position: static;
         font-size: 24px;
     }

@@ -119,7 +119,7 @@
             "name":"Royo",
             "date":"2023",
             "size":"23 1/2\" x 15 1/2\" (60 cm x 40 cm)",
-            "color":" Analog color photography, Archival pigment print",
+            "color":"Analog color photography, Archival pigment print",
             "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/cfmjsyipm8i7domhid7o",
             "breakLine": true,
             "purchase": "https://edrcenter.com/work/%d7%a8%d7%95%d7%99%d7%95/"
@@ -128,16 +128,17 @@
             "name":"Royo #2",
             "date":"2023",
             "size":"23 1/2\" x 15 1/2\" (60 cm x 40 cm)",
-            "color":" Analog color photography, Archival pigment print",
+            "color":"Analog color photography, Archival pigment print",
             "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/crg3nx03syws8r66ysr3"
         }    
     ],
     "exhibitions": [{
         "name": "Neophytes",
         "date": "9.3 - 30.3.2024",
-        "location":"The Artists House, Tel Aviv,Israel",
+        "location":"The Artists House, Tel Aviv, Israel",
         "curator": "Curated by Rona Yefman",
         "assistant": "",
+        "credit": "Daniel Hanoch",
         "photography": [
 "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/mnp69zxrjpswectvr074",
 "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gtr01pe2j51wod6h5jdg",

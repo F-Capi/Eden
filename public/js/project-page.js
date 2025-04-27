@@ -137,7 +137,8 @@ function createExhibitionDropdown(container, title, exhibitions) {
                 assistant: exhibition.assistant,
                 size: "",
                 date: "",
-                color: ""
+                color: "",
+                credit: exhibition.credit
             });
         });
 
@@ -189,7 +190,9 @@ function createExhibitionDropdown(container, title, exhibitions) {
                 }
                 if (exhibition.assistant) {
                     exhibitionInfo.innerHTML += `<p class="ex-m-assistant" >Assistant: ${exhibition.assistant.substring(19)}</p>`;
-
+                }
+                if (exhibition.credit) {
+                    exhibitionInfo.innerHTML += `<p class="ex-m-assistant" >Photo credit: ${exhibition.credit}</p>`;
                 }
                 updateImage();
             } else {
@@ -392,8 +395,11 @@ function createDropdown(container, title, images, startIndex) {
         // A partir de aqui
         if (title === "Exhibition") {
             infoImagesContainer.innerHTML = `<div id="gallery-top-info"><p id="gallery-name">${images[currentIndex].name}<br> ${images[currentIndex].exhibitionDate}<br> ${images[currentIndex].exhibitionLocation}</p></div>
-            <div id="gallery-bottom-info"><p id="gallery-info1">${images[currentIndex].curator}</p><p id="gallery-info2">${images[currentIndex].assistant}</p></div>
-              `;
+            <div id="gallery-bottom-info">
+            <p id="gallery-info1">${images[currentIndex].curator}</p>
+            <p id="gallery-info2">${images[currentIndex].assistant}</p>
+            ${images[currentIndex].credit ? `<p id="gallery-info3">Photo credit: ${images[currentIndex].credit}</p>` : ''}
+            </div>`;
 
             img.classList.add('exhibition-image');
             const num = document.createElement("p");
@@ -640,8 +646,19 @@ function updateGallery() {
         document.getElementById('gallery-info0').textContent = currentData.exhibitionLocation;
         document.getElementById('gallery-info1').textContent = currentData.curator;
         document.getElementById('gallery-info2').textContent = currentData.assistant;
+
+        const creditElement = document.getElementById('gallery-info3');
+        if (creditElement) {
+            if (currentData.credit) {
+                creditElement.textContent = `Photo credit: ${currentData.credit}`;
+                creditElement.style.display = 'block';
+            } else {
+                creditElement.style.display = 'none';
+            }
+        }
     } else {
         document.getElementById('gallery-info0').textContent = "";
+        document.getElementById('gallery-info3').textContent = "";
 
         infoTop.style.textDecoration = "underline";
         galleryName.style.textDecoration = "none";

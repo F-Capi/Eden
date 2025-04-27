@@ -1,7 +1,19 @@
-[
+[ {
+    "id":"typing",
+    "name": "<span>typing...</span>",
+    "year": 2024,
+    "imgs": [
+        {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/eqzhwq0ziqnlu4vfz27i"},
+        {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/ano9liwpzq62uaktvkhi"},
+        {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gylwu1cnagjlu4sri2tx"},
+        {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/gxbpl2xj8soshh14pukc"}
+
+        ],
+        "details": "Analog color photography,<br>Archival pigment print"
+    },
         {
-            "id":"neophytes-kiryat-hamelacha",
-            "name": "<span>Neophytes:</span><br><span> Kiryat Hamelacha</span>",
+            "id":"the-ecology-of-us",
+            "name": "<span>The Ecology of Us</span>",
             "year": 2024,
             "imgs": [
                 {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/ysn5mcinfanocmio3c4e"}, 

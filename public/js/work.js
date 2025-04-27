@@ -68,6 +68,7 @@ async function loadProjects() {
 
                 const i = document.createElement("img");
                 i.src = img.url;
+                i.classList.add('image-fade-in');
                 a.appendChild(i);
                 di.appendChild(a);
 
@@ -90,6 +91,7 @@ async function loadProjects() {
             projectElement.appendChild(images);
             contentDiv.appendChild(projectElement);
         });
+        document.getElementById("backToTop").innerHTML = `<a class="gentle-hover-shake" href="">(back to top)</a>`;
     } catch (error) {
         contentDiv.innerHTML = '<p>Error loading projects</p>';
         console.error(error);
