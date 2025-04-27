@@ -13,6 +13,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public'), {
     setHeaders: (res, filePath) => {
         res.setHeader('Access-Control-Allow-Origin', '*');
+
         if (filePath.endsWith('.woff2')) {
             res.setHeader('Content-Type', 'font/woff2');
         } else if (filePath.endsWith('.woff')) {
@@ -20,9 +21,15 @@ app.use(express.static(path.join(__dirname, 'public'), {
         } else if (filePath.endsWith('.otf')) {
             res.setHeader('Content-Type', 'font/otf');
         }
-        res.setHeader('Cache-Control', 'public, max-age=31536000'); // Caching
+
+        if (filePath.endsWith('.html') || filePath.endsWith('.js') || filePath.endsWith('.css')) {
+            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+        } else {
+            res.setHeader('Cache-Control', 'public, max-age=31536000'); // cache imágenes, fonts, etc
+        }
     }
 }));
+
 
 app.get('/download/pdf', (req, res) => {
     const filePath = path.join(__dirname, 'public', 'pdf', 'Eden Zornitser_CV.pdf');
