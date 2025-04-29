@@ -47,7 +47,7 @@
         },
         {
             "name":"Blaise",
-            "date":"2023",
+            "date":"2022",
             "size":"31 1/2\" x 25\" (80 cm x 64 cm)",
             "color":"Analog color photography, Archival pigment print",
             "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/eqzhwq0ziqnlu4vfz27i"
@@ -68,8 +68,13 @@
        }],
        "press": [
         {
-            "link": "https://unhingedprint.com/the-fluid-world-of-eden-zornitser",
-            "text": "‘Desktop’ at Haifa Museum: Time Travel”, Portfolio Magazine, Tel Aviv, IL",
+            "link": "https://www.prtfl.co.il/archives/222409",
+            "text": "‘Desktop’ at Haifa Museum: “Time Travel”, Portfolio Magazine, Tel Aviv, IL",
+            "date": "2025"
+        },
+        {
+            "link": "https://www.globes.co.il/news/article.aspx?did=1001508673",
+            "text": "‘Desktop’, Globes Newspaper, Tel Aviv, IL",
             "date": "2025"
         }
     ]
