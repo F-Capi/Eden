@@ -101,7 +101,6 @@ const handleRoute = () => {
     }
 };
 
-window.addEventListener('popstate', handleRoute);
 
 const navigateTo = (page, projectTitle = '') => {
     if (page === 'project' && projectTitle) {
@@ -113,6 +112,7 @@ const navigateTo = (page, projectTitle = '') => {
     }
 };
 
+window.addEventListener('popstate', handleRoute);
 
 document.addEventListener('DOMContentLoaded', () => {
     handleRoute();
