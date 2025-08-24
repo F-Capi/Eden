@@ -414,9 +414,15 @@ function createDropdown(container, title, images, startIndex) {
             dropdownContent.appendChild(num);
         } else {
 
+            let n = "";
+            if (n.length < 1) {
+                n = "";
+            } else {
+                n = images[currentIndex].name + ",";
+            }
             infoImagesContainer.innerHTML = `
             <div id="gallery-top-info">
-                <p id="gallery-name">${images[currentIndex].name}, ${images[currentIndex].date}</p>
+                <p id="gallery-name">${n} ${images[currentIndex].date}</p>
             </div>`
 
             infoImagesContainer.innerHTML +=

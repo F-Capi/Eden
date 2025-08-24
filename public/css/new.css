@@ -731,6 +731,7 @@ text-decoration: underline;
     background-color: #F4FF61;
 } 
 #about-description{
+    
     line-height: 107%; /* 25.68px */
     margin-left: 60px;
     margin-right: 60px;
@@ -753,6 +754,8 @@ background-color: #F4FF61;
     color: #000;
     font-family: "OCRAStd";
     font-size: 10px; 
+    padding: 4px;
+    padding-bottom: 6px;
 }
 #home-image-container {
     display: flex; /* Coloca los elementos centrados */

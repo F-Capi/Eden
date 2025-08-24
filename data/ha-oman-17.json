@@ -39,7 +39,8 @@
             "url":"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/tmgyenommohapgocq0xe"
         } 
        ],
-       "exhibitions": [{
+       "exhibitions": [
+        {
         "name": "Only the Marvelous is Beautiful",
         "date": "31.10 - 20.12.2024",
         "location":"Edmond de Rothschild Center, Tel Aviv, Israel",
@@ -50,6 +51,17 @@
 "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/aboqznacdxzoxat3tefz"
 ,"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/vfihp5wvssnhcs4jhuhx"
             ,"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/thpkyiov8r1cl6bynhrx"
+        ]
+       },
+     {
+        "name": "Fresh Paint Art Fair",
+        "date": "21.5 - 26.5.2025",
+        "location":"Ha'Oman 17, 2023",
+        "curator": "42\" x 54\" (107 cm x 132 cm)",
+        "assistant": "Analog color photography, archival pigment print Edition of 5",
+        "credit": "Daniel Hanoch",
+        "photography": [
+"https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/Eden_FreshPaint2025-DanielHanochPhotographer1_pvsdrv"
         ]
        }],
        "press": [

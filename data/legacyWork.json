@@ -1,0 +1,32 @@
+[ 
+        {
+            "id":"the-ecology-of-us",
+            "name": "<span>The Ecology of Us</span>",
+            "year": 2024,
+            "imgs": [
+                {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/ysn5mcinfanocmio3c4e"}, 
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/uacoxy6up14xvvvbr3h3", "crop":"true", "width":"144%","top":"-30%", "left":"-20%"},
+               { "url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/ytg0q7z5lg3oeo9rmbl4"},
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/nvpzlbd61qetfkogtv9e"}
+            ],
+            "details": "Analog color photography,<br>Archival pigment print"
+        },
+
+        {
+            "id":"testosterone-on-paper-aura",
+            "name": "<span>Testosterone on Paper:</span><br> <span>Aura</span>",
+            "year": 2024,
+            "imgs": [
+                {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/blaazpecuoxz6il2kolm" , "crop":"true","width":"100%","top":"-30%", "left":"0"}, 
+               {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/vnvg8dzrbf6lzwwbdugx"}       
+              ],
+            "details":"Photographic negative,<br> Testosterone, Chromogenic print"
+        },
+        {
+            "id":"paintings-with-my-iphone-flash",
+            "name": "<span>Paintings with My iPhone</span><br> <span>Flash</span>",
+            "year": 2023,
+            "imgs": [ {"url": "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/jnrt29jkqmexsx6sdjl0"}],
+            "details":"Chromogenic print"
+        }
+       ]
