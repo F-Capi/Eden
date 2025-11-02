@@ -83,11 +83,11 @@
         } 
     ],
     "exhibitions": [{
-        "name": "",
-        "date": "",
-        "location":"",
-        "curator": "",
-        "assistant": "",
+        "name": " ",
+        "date": " ",
+        "location":" ",
+        "curator": " ",
+        "assistant": " ",
         "credit": "Daniel Hanoch (ALL PHOTOS)",
         "photography": [
 "https://res.cloudinary.com/dw2ezdbca/image/upload/f_auto,q_auto/Rothschild_Residency2025-DanielHanochPhotographer-39_jo8kyw",

@@ -77,8 +77,14 @@ function updateDisplay() {
             imgElement.classList.add('loaded');
 
             numbering.textContent = String(currentIndex + 1).padStart(3, '0');
-            info.textContent = `${currentImage.name}, ${currentImage.date}`;
+
+            const clean = v => (typeof v === 'string' ? v.trim() : '');
+            const name = clean(currentImage.name);
+            const date = clean(currentImage.date);
+
+            info.textContent = [name, date].filter(Boolean).join(', ');
         };
+
     }
 }
 
